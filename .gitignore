@@ -1,0 +1,8 @@
+.DS_Store
+.vscode
+config/global-*.json
+forepaas
+node_modules
+production
+webpack
+yarn-error.log

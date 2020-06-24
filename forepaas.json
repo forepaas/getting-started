@@ -1,0 +1,75 @@
+{
+  "type": "app",
+  "language": "js",
+  "framework": "react",
+  "management": {
+    "dashboards": {
+      "editor": "architect"
+    },
+    "extensions": true,
+    "formatter": true,
+    "menu": true,
+    "style": true,
+    "traduction": true
+  },
+  "modules": {
+    "recharts": {
+      "version": "1.0.0"
+    },
+    "animation": {
+      "version": "1.0.0"
+    },
+    "api": {
+      "version": "1.0.0"
+    },
+    "chart": {
+      "version": "2.0.0"
+    },
+    "client-authority-manager": {
+      "version": "1.0.1"
+    },
+    "dashboarding": {
+      "version": "1.0.0"
+    },
+    "dynamic-parameter": {
+      "version": "1.1.0"
+    },
+    "dynamic-parameter-datepicker": {
+      "version": "1.1.0"
+    },
+    "dynamic-parameter-selectbox": {
+      "version": "2.0.0"
+    },
+    "formatter": {
+      "version": "1.2.0"
+    },
+    "core-ui": {
+      "version": "3.0.0"
+    },
+    "menu": {
+      "version": "3.0.0"
+    },
+    "query-builder": {
+      "version": "2.0.0"
+    },
+    "sdk": {
+      "version": "1.2.1"
+    },
+    "store": {
+      "version": "1.0.1"
+    },
+    "toaster": {
+      "version": "1.0.0"
+    },
+    "translate": {
+      "version": "1.0.0"
+    },
+    "xhr": {
+      "version": "1.0.0"
+    },
+    "webpack": {
+      "version": "1.3.0",
+      "root": true
+    }
+  }
+}
