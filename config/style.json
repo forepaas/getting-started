@@ -96,9 +96,14 @@
       }
     },
     "xAxis": {
+      "height": 20,
       "axisLine": false,
       "interval": 0,
-      "tickLine": false
+      "tickLine": false,
+      "tickStyle": {
+        "y": -8,
+        "fontSize": 12
+      }
     },
     "yAxis": {
       "tickLine": false,
@@ -123,14 +128,29 @@
         "interval": 0,
         "labelLine": false,
         "stroke": null,
-        "fill": null
+        "fill": null,
+        "innerRadius": 50,
+        "outerRadius": 60
       }
     ]
+  },
+
+  "recharts.bar": {
+    "xAxis": {
+      "tickStyle": {
+        "fontSize": 10
+      }
+    }
   },
   "recharts.bar-horizontal": {
     "barSize": 6,
     "yAxis": {
       "hide": true
+    },
+    "xAxis": {
+      "tickStyle": {
+        "y": 0
+      }
     }
   }
 }
