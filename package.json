@@ -13,7 +13,7 @@
   "author": "ForePaaS Support <support@forepaas.com>",
   "license": "SEE LICENSE IN LICENSE.md",
   "dependencies": {
-    "axios": "^0.16.2",
+    "axios": "^0.18.1",
     "date-fns": "^2.13.0",
     "font-awesome": "^4.7.0",
     "history": "^4.9.0",
