@@ -6,11 +6,123 @@
   "description": "",
   "items": [
     {
+      "type": "dynamic-parameter",
+      "id": "search-bar",
+      "dynamic-parameter": {
+        "type": "filter",
+        "id": "dynamic-stations",
+        "component": "autocomplete-box",
+        "placeholder": "Search for a station",
+        "isMulti": true,
+        "dictionary": "station_id"
+      },
+      "sizeX": 100,
+      "sizeY": 19,
+      "col": 0,
+      "row": 0,
+      "items": []
+    },
+    {
+      "type": "panel",
+      "id": "custom-map",
+      "sizeX": 75,
+      "sizeY": 99,
+      "row": 20,
+      "col": 0,
+      "items": [
+        {
+          "type": "chart",
+          "chart": {
+            "id": "chart-map",
+            "component": "map",
+            "noReload": true,
+            "dynamic-parameters": [
+              "dynamic-date",
+              "dynamic-holidays",
+              "dynamic-stations",
+              "dynamic-weekday"
+            ],
+            "request": {
+              "data": {
+                "fields": {
+                  "rides": ["avg"]
+                }
+              },
+              "scale": {
+                "fields": ["station_id", "station_name", "lat", "lng"]
+              },
+              "filter": {},
+              "order": {}
+            }
+          },
+          "sizeX": 100,
+          "sizeY": 88,
+          "row": 6,
+          "col": 0
+        },
+        {
+          "type": "html",
+          "content": "Map view",
+          "customclass": "chart-title",
+          "sizeX": 100,
+          "sizeY": 5,
+          "row": 0,
+          "col": 0
+        }
+      ]
+    },
+    {
+      "type": "panel",
+      "id": "top-stations-container",
+      "sizeX": 24,
+      "sizeY": 99,
+      "row": 20,
+      "col": 76,
+      "items": [
+        {
+          "type": "chart",
+          "chart": {
+            "id": "chart-7843335",
+            "component": "recharts.bar-horizontal",
+            "options": {},
+            "request": {
+              "data": {
+                "limit": 7,
+                "fields": {
+                  "rides": ["sum"]
+                }
+              },
+              "scale": {
+                "fields": ["station_id"]
+              },
+              "dictionaries": ["station_id"],
+              "order": {
+                "rides": "desc"
+              }
+            }
+          },
+          "sizeX": 100,
+          "sizeY": 86,
+          "row": 6,
+          "col": 0
+        },
+        {
+          "type": "html",
+          "content": "Station top 7",
+          "customclass": "chart-title",
+          "sizeX": 100,
+          "sizeY": 5,
+          "row": 0,
+          "col": 0
+        }
+      ]
+    },
+    {
       "type": "panel",
       "id": "rides-history-container",
-      "sizeX": 49,
+      "sizeX": 75,
       "sizeY": 70,
-      "row": 0,
+      "row": 120,
       "col": 0,
       "items": [
         {
@@ -38,12 +150,16 @@
             "options": {
               "xAxis": {
                 "type": "category"
+              },
+              "yAxis": {
+                "domain": [0, 6000]
               }
             },
             "dynamic-parameters": [
               "dynamic-date",
               "dynamic-holidays",
-              "dynamic-stations"
+              "dynamic-stations",
+              "dynamic-weekday"
             ]
           },
           "sizeX": 100,
@@ -57,9 +173,9 @@
       "type": "panel",
       "id": "weekly-seasonality-container",
       "sizeX": 24,
-      "sizeY": 70,
-      "row": 0,
-      "col": 50,
+      "sizeY": 135,
+      "row": 120,
+      "col": 76,
       "items": [
         {
           "type": "chart",
@@ -79,9 +195,9 @@
             },
             "options": {}
           },
-          "sizeX": 100,
-          "sizeY": 60,
-          "row": 5,
+          "sizeX": 103,
+          "sizeY": 61,
+          "row": 29,
           "col": 0
         },
         {
@@ -97,57 +213,11 @@
     },
     {
       "type": "panel",
-      "id": "top-stations-container",
-      "sizeX": 49,
-      "sizeY": 70,
-      "row": 74,
-      "col": 0,
-      "items": [
-        {
-          "type": "chart",
-          "chart": {
-            "id": "chart-7843335",
-            "component": "recharts.bar-horizontal",
-            "options": {},
-            "request": {
-              "data": {
-                "limit": 7,
-                "fields": {
-                  "rides": ["sum"]
-                }
-              },
-              "scale": {
-                "fields": ["station_id"]
-              },
-              "dictionaries": ["station_id"],
-              "order": {
-                "rides": "desc"
-              }
-            }
-          },
-          "sizeX": 100,
-          "sizeY": 60,
-          "row": 6,
-          "col": 0
-        },
-        {
-          "type": "html",
-          "content": "Station top 7",
-          "customclass": "chart-title",
-          "sizeX": 100,
-          "sizeY": 5,
-          "row": 0,
-          "col": 0
-        }
-      ]
-    },
-    {
-      "type": "panel",
       "id": "rides-temperature-container",
-      "sizeX": 24,
-      "sizeY": 70,
-      "row": 0,
-      "col": 75,
+      "sizeX": 37,
+      "sizeY": 64,
+      "row": 191,
+      "col": 0,
       "items": [
         {
           "type": "chart",
@@ -168,7 +238,7 @@
           },
           "sizeX": 100,
           "sizeY": 54,
-          "row": 8,
+          "row": 6,
           "col": 0
         },
         {
@@ -177,6 +247,53 @@
           "customclass": "chart-title",
           "sizeX": 100,
           "sizeY": 8,
+          "row": 0,
+          "col": 0
+        }
+      ]
+    },
+    {
+      "type": "panel",
+      "id": "rides-holidays-container",
+      "sizeX": 37,
+      "sizeY": 64,
+      "row": 191,
+      "col": 38,
+      "items": [
+        {
+          "type": "chart",
+          "chart": {
+            "id": "chart-6930201",
+            "component": "recharts.bar",
+            "request": {
+              "data": {
+                "fields": {
+                  "avg_rides_per_day_per_station": ["select"]
+                }
+              },
+              "scale": {
+                "fields": ["cat_holiday"]
+              }
+            },
+            "options": {
+              "barSize": 20,
+              "yAxis": {
+                "domain": [2000, 3800],
+                "scale": "linear"
+              }
+            }
+          },
+          "sizeX": 100,
+          "sizeY": 54,
+          "row": 6,
+          "col": 0
+        },
+        {
+          "type": "html",
+          "content": "Rides variability on Holidays",
+          "customclass": "chart-title",
+          "sizeX": 100,
+          "sizeY": 5,
           "row": 0,
           "col": 0
         }

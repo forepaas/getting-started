@@ -67,20 +67,12 @@
       "id": "dyn-holidays",
       "items": [
         {
-          "type": "html",
-          "content": "<div class='dyn-title'>Holidays</div>",
-          "label": "Holidays",
-          "class": "dyn-title"
-        },
-        {
           "type": "dynamic-parameter",
           "dynamic-parameter": {
             "type": "filter",
             "id": "dynamic-holidays",
-            "component": "selectbox",
-            "reference": null,
-            "multi": true,
-            "placeholder": "Select Holidays",
+            "component": "checkbox",
+            "title": "Holidays",
             "dictionary": "cat_holiday"
           },
           "style": {
@@ -90,23 +82,16 @@
       ]
     },
     {
-      "id": "dyn-stations",
+      "id": "dyn-weekday",
       "items": [
-        {
-          "type": "html",
-          "content": "<div class='dyn-title'>Stations</div>",
-          "label": "Stations",
-          "class": "dyn-title"
-        },
         {
           "type": "dynamic-parameter",
           "dynamic-parameter": {
             "type": "filter",
-            "id": "dynamic-stations",
-            "component": "selectbox",
-            "reference": null,
-            "placeholder": "Select Stations",
-            "dictionary": "station_id"
+            "id": "dynamic-weekday",
+            "dictionary": "week_day",
+            "component": "checkbox",
+            "title": "Days"
           },
           "style": {
             "paddingBottom": "10px"
@@ -115,7 +100,7 @@
       ]
     },
     {
-      "id": "mfooterain",
+      "id": "footer",
       "class": "footer",
       "items": [
         {

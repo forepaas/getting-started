@@ -7,10 +7,9 @@ export default {
     LoginSelector,
     StandardLogin
   },
-  init() {
+  init () {
     for (let component in this.components) {
       FpSdk.modules['client-authority-manager'][component] = this.components[component]
     }
   }
 }
-

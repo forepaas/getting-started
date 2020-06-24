@@ -18,9 +18,13 @@
       "items": [
         {
           "type": "link",
-          "style": {},
           "text": "Rides",
           "url": "/rides-analytics"
+        },
+        {
+          "type": "link",
+          "text": "Learn",
+          "url": "/learn"
         }
       ],
       "name": "tabs"
