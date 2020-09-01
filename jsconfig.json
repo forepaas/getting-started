@@ -2,12 +2,11 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "forepaas/*": ["src/forepaas/*"],
       "src/*": ["./src/*"],
-      "config/*": ["./src/config/*"],
       "styles/*": ["./src/styles/*"],
-      "assets/*": ["./src/assets/*"],
-      "forepaas.json": ["./src/forepaas.json"]
+      "config/*": ["./config/*"],
+      "forepaas/*": ["./forepaas/*"],
+      "forepaas.json": ["./forepaas.json"]
     }
   }
 }

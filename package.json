@@ -11,6 +11,7 @@
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
     "axios": "^0.16.2",
+    "craco-babel-loader": "^0.1.4",
     "craco-less": "^1.17.0",
     "date-fns": "^2.13.0",
     "font-awesome": "^4.7.0",

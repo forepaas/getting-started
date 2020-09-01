@@ -4,7 +4,7 @@
 /node_modules
 /.pnp
 .pnp.js
-src/forepaas
+
 # testing
 /coverage
 
@@ -21,3 +21,6 @@ src/forepaas
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# ForePaaS
+forepaas
