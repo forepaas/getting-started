@@ -14,7 +14,7 @@ import 'src/helpers'
 // TODO rajouter fr.json
 
 FpSdk.start()
-  .then(() => {
+  .then(async () => {
     authentication.init()
     templates.init()
     return components.init()

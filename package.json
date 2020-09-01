@@ -14,14 +14,17 @@
   "license": "SEE LICENSE IN LICENSE.md",
   "dependencies": {
     "axios": "^0.16.2",
+    "chonky": "^1.1.1",
     "date-fns": "^2.13.0",
     "font-awesome": "^4.7.0",
     "history": "^4.9.0",
     "interactjs": "1.4.8",
+    "js-sha256": "^0.9.0",
     "leaflet": "^1.6.0",
     "lodash": "^4.17.4",
-    "moment": "^2.18.1",
+    "moment": "^2.27.0",
     "moment-timezone": "^0.5.17",
+    "mustache": "^4.0.1",
     "prop-types": "^15.6.0",
     "rc-tooltip": "^3.7.0",
     "react": "^16.13.1",
@@ -41,7 +44,8 @@
     "redux": "^3.7.2",
     "redux-logger": "^3.0.6",
     "redux-thunk": "^2.2.0",
-    "sortablejs": "^1.7.0"
+    "sortablejs": "^1.7.0",
+    "xml2js": "^0.4.23"
   },
   "devDependencies": {
     "array-find": "^1.0.0",
