@@ -1,68 +1,183 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# ForePaaS : React Template
 
-## Available Scripts
+This is the React template. You can use this template by choosing it in the ForePaaS marketplace.
 
-In the project directory, you can run:
+## Getting Started
 
-### `yarn start`
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### Prerequisites
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+- [Node.js](https://nodejs.org/en/)
+- [yarn](https://yarnpkg.com/) or [npm](https://www.npmjs.com/)
 
-### `yarn test`
+### Installing
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Follow these steps to run the application locally :
 
-### `yarn build`
+Install node packages :
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```sh
+yarn
+```
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+Install npx :
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```sh
+yarn global add npx
+```
 
-### `yarn eject`
+Install forepaas packages
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+```sh
+yarn fppm
+```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Run the application
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+```sh
+yarn start
+```
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Customize your Application
 
-## Learn More
+The `src` directory is organized as below :
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```
+|-- src/
+    |-- authentication/
+    |-- helpers/
+    |-- templates/
+    |-- components/
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Here is a short description of those directories, what structure they should have and what they are used for:
 
-### Code Splitting
+- Authentication
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+  This allows you to override the default ForePaaS authentication behavior.
+  A simple example of this would be if you wanted to change the behavior or HTML structure of the login form.
+  You would simply create your component's class in this directory. This class can either extend the original one (in the `forepaas/` directory) or be an entirely new one.
+  Either way, in order to override a component, you need to make sure yours has the same name as one being overridden and is imported in the `authentication/index.js` file and added in the `components` property.
 
-### Analyzing the Bundle Size
+- Helpers
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+  This directory is very straight-forward, you can create helper functions that can then be called anywhere else in your code.
+  ForePaaS recommends to code these functions in the `window` variable, making sure you can always call them, from anywhere in the application.
 
-### Making a Progressive Web App
+* Templates
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+  This directory stores the different _dashboarding templates_. This means that these templates are the React components that can interpret the JSON of the dashboarding in order to display it.
+  Once a template is created, you can use it in a dashboard by adding the `template` property at the root of a dashboard object. For example, a new template would be imported this way in the `templates/index.js` file:
 
-### Advanced Configuration
+  ```js
+  import FpSdk from "forepaas/sdk";
+  import main from "./main.jsx";
+  import myCustomTemplate from "./myCustomTemplate.jsx";
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+  export default {
+    templates: {
+      main,
+      myCustomTemplate
+    },
+    camelCaseToDash(myStr) {
+      return myStr.replace(/([a-z])([A-Z])/g, "$1-$2").toLowerCase();
+    },
+    init() {
+      for (let template in this.templates) {
+        FpSdk.modules.dashboarding.templates[
+          this.camelCaseToDash(template)
+        ] = this.templates[template];
+      }
+    }
+  };
+  ```
 
-### Deployment
+  This same template could then be used in the dashboard's JSON file this way:
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+  ```json
+  {
+    "name": "myDashboard",
+    "template": "my-custom-template",
+    "width": 36,
+    "height": 36,
+    "items": [
+      ...
+    ],
+    ...
+  }
+  ```
 
-### `yarn build` fails to minify
+* Components
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+  This directory is where most of the custom code goes. Components are all the elements that will be called using JSON in the `/config` directory.
+  Just like the authentication components and templates, these classes can either extend the original ones (in the `forepaas/` directory) or be an entirely new one. In order to override a component, you need to make sure yours has the same name as one being overridden. Either way, it needs to then be imported in the `components/index.js` file and added in the `components` property.
+  To refer to this component from JSON files in the `/config` directory, simply write the hyphenated name of your component in the `type` property.
+  There are exceptions as charts and dynamic parameters require the underlying component to have a name equal to the type + component. Therefore, in order to create custom charts or dynamic parameters, your component's class will need the prefix `Chart` or `DynamicParameter`.
+  For example:
+
+  ```json
+  // A React component may be called like below from a JSON configuraiton file.
+  // This will refer to a React component called `MyCustomComponent`
+  {
+    "type": "my-custom-component",
+    "my-props": "my value"
+  }
+
+  // A chart component may be called like below from a JSON configuraiton file.
+  // This will refer to a component called `ChartMyCustomComponent`
+  // The major difference with the previous example is that you will be able to connect that chart to a Query Builder request.
+  {
+    "type": "chart",
+    ...
+    "chart": {
+      "component": "my-custom-component",
+      ...
+    }
+  }
+  ```
+
+Except for helpers, all modules in the `src` have to be initialized to work.
+Once the module is created in the right directory, simply import it in the directory's `index.js` and add it to the `components` property.
+The end result should look like that:
+
+```js
+import FpSdk from "forepaas/sdk";
+
+import DashboardTitle from "./DashboardTitle";
+import Username from "./Username";
+import Toaster from "./Toaster";
+
+export default {
+  components: {
+    DashboardTitle,
+    Username,
+    Toaster
+  },
+  camelCaseToDash(myStr) {
+    return myStr.replace(/([a-z])([A-Z])/g, "$1-$2").toLowerCase();
+  },
+  init() {
+    for (let component in this.components) {
+      FpSdk.modules[this.camelCaseToDash(component)] = this.components[
+        component
+      ];
+    }
+  }
+};
+```
+
+You will find further information in `src/components/README.md`
+
+## Built With
+
+- [React](https://reactjs.org/)
+- [Npm](https://www.npmjs.com/)
+
+## Versioning
+
+We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/forepaas/getting-started/branches).
+
+## License
+
+See [LICENSE](LICENSE.md) for details

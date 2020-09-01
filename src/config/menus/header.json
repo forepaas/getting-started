@@ -1,0 +1,42 @@
+{
+  "id": "header",
+  "class": "header",
+  "containers": [
+    {
+      "id": "logo",
+      "items": [
+        {
+          "type": "image",
+          "src": "assets/img/cta-logo.png",
+          "label": "label"
+        }
+      ],
+      "name": "logo"
+    },
+    {
+      "id": "tabs",
+      "items": [
+        {
+          "type": "link",
+          "text": "Rides",
+          "url": "/rides-analytics"
+        },
+        {
+          "type": "link",
+          "text": "Learn",
+          "url": "/learn"
+        }
+      ],
+      "name": "tabs"
+    },
+    {
+      "id": "user",
+      "items": [
+        {
+          "type": "username"
+        }
+      ],
+      "name": "user"
+    }
+  ]
+}

@@ -1,20 +1,60 @@
 {
-  "name": "my-app",
-  "version": "0.1.0",
-  "private": true,
+  "version": "1.0.0",
+  "description": "React app for Getting Started tutorial",
+  "repository": "git://github.com/forepaas/getting-started.git",
+  "author": "ForePaaS Support <support@forepaas.com>",
+  "license": "SEE LICENSE IN LICENSE.md",
   "dependencies": {
+    "@craco/craco": "^5.6.4",
+    "@dvhb/craco-extend-scope": "^1.0.1",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
-    "react-scripts": "3.4.3"
+    "axios": "^0.16.2",
+    "craco-less": "^1.17.0",
+    "date-fns": "^2.13.0",
+    "font-awesome": "^4.7.0",
+    "history": "^4.9.0",
+    "interactjs": "1.4.8",
+    "js-sha256": "^0.9.0",
+    "leaflet": "^1.6.0",
+    "lodash": "^4.17.4",
+    "moment": "^2.27.0",
+    "moment-timezone": "^0.5.17",
+    "mustache": "^4.0.1",
+    "node-sass": "^4.14.1",
+    "prop-types": "^15.6.0",
+    "rc-tooltip": "^3.7.0",
+    "react": "^16.0.0",
+    "react-checkbox-group": "^5.0.2",
+    "react-data-grid": "^4.0.7",
+    "react-date-range": "git+https://github.com/drappier-charles/react-date-range.git",
+    "react-dom": "^16.0.0",
+    "react-grid-layout": "^0.14.7",
+    "react-keyed-file-browser": "^1.9.0",
+    "react-leaflet": "^2.7.0",
+    "react-leaflet-markercluster": "^2.0.0",
+    "react-month-picker": "^1.3.5",
+    "react-redux": "^5.0.6",
+    "react-router-dom": "^4.2.2",
+    "react-router-transition": "^1.1.1",
+    "react-scripts": "3.4.3",
+    "react-select": "^3.0.4",
+    "react-toastify": "2.2.1",
+    "recharts": "^1.6.2",
+    "redux": "^3.7.2",
+    "redux-logger": "^3.0.6",
+    "redux-thunk": "^2.2.0",
+    "sortablejs": "^1.7.0",
+    "xml2js": "^0.4.23"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "start": "craco start",
+    "build": "craco build",
+    "test": "craco test",
+    "fppm": "npx git+https://gitlab.forepaas.com/open-sources/fppm.git install",
+    "zip": "./scripts/utils/zip.sh",
+    "generate": "plop --plopfile ./scripts/generators/index.js"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -30,5 +70,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@babel/plugin-proposal-decorators": "^7.10.5",
+    "craco-alias": "^2.1.1"
   }
 }

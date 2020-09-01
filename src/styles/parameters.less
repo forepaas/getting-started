@@ -1,0 +1,100 @@
+.datepicker {
+  line-height: 36px;
+  margin     : 5px 5px 0px 5px;
+  font-weight: bold;
+
+  .datepicker-close {
+    background    : #fff;
+    cursor        : pointer;
+    border        : 1px solid #ccc;
+    box-shadow    : none !important;
+    border-radius : 5px;
+    height        : 36px;
+    font-size     : 13px;
+    color         : #333F50;
+    padding       : 0 11px;
+    letter-spacing: -0.5px;
+
+    .datepicker-close-separator {
+      width       : 15px;
+      height      : 15px;
+      line-height : 15px;
+      font-size   : 12px;
+      color       : @cerulean-blue;
+      text-align  : center;
+      display     : inline-block;
+      padding-left: 2px;
+
+      &:before {
+        display                : block;
+        width                  : 100%;
+        height                 : 100%;
+        font                   : normal normal normal 14px/1 FontAwesome;
+        font-size              : inherit;
+        text-rendering         : auto;
+        -webkit-font-smoothing : antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        content                : "\F054";
+      }
+    }
+  }
+
+}
+
+.datepicker-open {
+  z-index      : 1000 !important;
+  margin       : 0;
+  margin-top   : -5px;
+  border-radius: 4px;
+  padding      : 4px;
+  background   : @white;
+  box-shadow   : 0 5px 30px rgba(0, 0, 0, 0.2);
+
+  .rdr-Day {
+    &.is-inRange {
+      background: @light-color  !important;
+    }
+
+    &.is-selected {
+      background: @cerulean-blue  !important;
+    }
+  }
+
+  .rdr-PredefinedRangesItem {
+    border-radius: 4px !important;
+    font-weight  : 500;
+
+    &.rdr-PredefinedRangesItemActive {
+      background: @cerulean-blue  !important;
+      color     : @white  !important;
+    }
+  }
+
+  .rdr-MonthAndYear-innerWrapper {
+    font-weight: 500;
+  }
+
+  .rdr-MonthAndYear-button {
+    cursor    : pointer;
+    background: @cerulean-blue  !important;
+
+    &.next i {
+      border-color: transparent transparent transparent @white  !important;
+    }
+
+    &.prev i {
+      border-color: transparent @white transparent transparent !important;
+    }
+  }
+}
+
+.selectbox__control.css-1goq2uo-control {
+  width      : calc(@sidebar-width - 6px);
+  margin     : 5px 5px 0px 5px;
+  font-weight: bold;
+}
+
+.selectbox__control.css-1goq2uo-control:hover {
+  cursor: pointer;
+
+}

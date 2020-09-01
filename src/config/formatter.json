@@ -1,0 +1,52 @@
+{
+  "measures": {
+    "pct": {
+      "unit": "%",
+      "mult": "100"
+    },
+    "kilo": {
+      "round": 0,
+      "mult": "0.001"
+    },
+    "mega": {
+      "round": 1,
+      "mult": "0.000001"
+    },
+    "rides": {
+      "round": "0",
+      "unit": " pax",
+      "mult": ""
+    },
+    "avg_rides_per_day_per_station": {
+      "round": "0",
+      "unit": "",
+      "mult": ""
+    }
+  },
+  "dimensions": {
+    "year": {
+      "type": "temporal",
+      "subtype": "year"
+    },
+    "date": {
+      "type": "temporal",
+      "subtype": "date",
+      "format": "DD/MM/YYYY"
+    },
+    "yearmonth": {
+      "type": "temporal",
+      "subtype": "month-year",
+      "format": "MMM. YY"
+    },
+    "yearweek_postdate": {
+      "type": "temporal",
+      "format": "DD/MM/YYYY",
+      "subtype": "date"
+    },
+    "month": {
+      "type": "temporal",
+      "format": "",
+      "subtype": "month"
+    }
+  }
+}

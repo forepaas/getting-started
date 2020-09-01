@@ -1,0 +1,114 @@
+{
+  "id": "sidebar",
+  "class": "sidebar",
+  "containers": [
+    {
+      "id": "dyn-datepicker",
+      "items": [
+        {
+          "type": "html",
+          "content": "<div class='dyn-title'>Date</div>",
+          "label": "Date",
+          "class": "dyn-title"
+        },
+        {
+          "type": "dynamic-parameter",
+          "dynamic-parameter": {
+            "type": "filter",
+            "id": "dynamic-date",
+            "component": "datepicker",
+            "reference": "range_date",
+            "ranges": [
+              {
+                "label": "Last Week",
+                "start": "subtract(1,'week').startOf('week')",
+                "end": "subtract(1,'week').endOf('week')",
+                "scale": "day"
+              },
+              {
+                "label": "Last Month",
+                "start": "subtract(1,'month').startOf('month')",
+                "end": "subtract(1,'month').endOf('month')",
+                "scale": "day"
+              },
+              {
+                "label": "Current Year",
+                "start": "startOf('year')",
+                "end": "endOf('day')",
+                "scale": "day"
+              },
+              {
+                "label": "12 M rolling",
+                "start": "subtract(1,'year').add(1,'month').startOf('month')",
+                "end": "endOf('month')",
+                "scale": "day"
+              },
+              {
+                "label": "Last year",
+                "start": "subtract(1,'year').startOf('year')",
+                "end": "subtract(1,'year').endOf('year')",
+                "scale": "day"
+              }
+            ],
+            "items": [],
+            "startAt": "subtract(1,'year').startOf('year')",
+            "minDate": "subtract(1,'year').startOf('year')",
+            "maxDate": "subtract(1,'year').endOf('year')",
+            "endAt": "subtract(1,'year').endOf('year')"
+          },
+          "label": "Date",
+          "style": {
+            "paddingBottom": "10px"
+          }
+        }
+      ]
+    },
+    {
+      "id": "dyn-holidays",
+      "items": [
+        {
+          "type": "dynamic-parameter",
+          "dynamic-parameter": {
+            "type": "filter",
+            "id": "dynamic-holidays",
+            "component": "checkbox",
+            "title": "Holidays",
+            "dictionary": "cat_holiday"
+          },
+          "style": {
+            "paddingBottom": "10px"
+          }
+        }
+      ]
+    },
+    {
+      "id": "dyn-weekday",
+      "items": [
+        {
+          "type": "dynamic-parameter",
+          "dynamic-parameter": {
+            "type": "filter",
+            "id": "dynamic-weekday",
+            "dictionary": "week_day",
+            "component": "checkbox",
+            "title": "Days"
+          },
+          "style": {
+            "paddingBottom": "10px"
+          }
+        }
+      ]
+    },
+    {
+      "id": "footer",
+      "class": "footer",
+      "items": [
+        {
+          "type": "html",
+          "content": "<a href='https://www.forepaas.com' target='_blank'>Powered by <img src='assets/img/powered.png'></a>",
+          "label": "Footer"
+        }
+      ]
+    }
+  ]
+}
