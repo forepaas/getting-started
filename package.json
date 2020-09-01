@@ -11,6 +11,7 @@
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
     "axios": "^0.16.2",
+    "craco-alias": "^2.1.1",
     "craco-babel-loader": "^0.1.4",
     "craco-less": "^1.17.0",
     "date-fns": "^2.13.0",
@@ -51,7 +52,7 @@
   },
   "scripts": {
     "start": "craco start",
-    "build": "craco build",
+    "build": "craco build && mv build production",
     "test": "craco test",
     "fppm": "npx git+https://gitlab.forepaas.com/open-sources/fppm.git install",
     "zip": "./scripts/utils/zip.sh",
@@ -74,6 +75,6 @@
   },
   "devDependencies": {
     "@babel/plugin-proposal-decorators": "^7.10.5",
-    "craco-alias": "^2.1.1"
+    "plop": "^2.7.4"
   }
 }

@@ -24,3 +24,5 @@ yarn-error.log*
 
 # ForePaaS
 forepaas
+production
+config/global-*.json

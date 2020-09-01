@@ -6,11 +6,11 @@
 # You can also put a sencond argument to specify the folder to zip.
 dirname=${PWD##*/}
 if [[ -z $1 ]]; then
-   zip -r ../$dirname . -x "./node_modules/*" -x "*.git*" -x "./forepaas/*"  -x "./webpack/*"
+   zip -r ../$dirname . -x "./node_modules/*" -x "*.git*" -x "./forepaas/*"  -x "./production/*"
 else
    if [[ -z $2 ]]; then
-      zip -r ../$1 . -x "./node_modules/*" -x "*.git*" -x "./forepaas/*" -x "./webpack/*"
+      zip -r ../$1 . -x "./node_modules/*" -x "*.git*" -x "./forepaas/*" -x "./production/*"
    else
-      cd $2 && zip -r ../$1 . -x "./node_modules/*" -x "*.git*" -x "./forepaas/*" -x "./webpack/*"
+      cd $2 && zip -r ../$1 . -x "./node_modules/*" -x "*.git*" -x "./forepaas/*" -x "./production/*"
    fi
 fi
