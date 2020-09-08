@@ -8,6 +8,7 @@ import DynamicParameterCheckbox from "./DynamicParameterCheckbox";
 import DynamicParameterAutocompleteBox from "./DynamicParameterAutocompleteBox";
 import ChartMap from "./ChartMap";
 import FileExplorer from "./FileExplorer";
+import EditableTable from "./EditableTable";
 
 export default {
   components: {
@@ -18,7 +19,8 @@ export default {
     DynamicParameterCheckbox,
     DynamicParameterAutocompleteBox,
     ChartMap,
-    FileExplorer
+    FileExplorer,
+    EditableTable
   },
   camelCaseToDash(myStr) {
     return myStr.replace(/([a-z])([A-Z])/g, "$1-$2").toLowerCase();

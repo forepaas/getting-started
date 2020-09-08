@@ -99,13 +99,13 @@ class FpDataStore extends FpXhr {
       if (!files) return [];
       return files.map(object => {
         return {
-          percent: 1,
-          filename: object.key[0],
+          id: `${bucket}/${object.key[0]}`,
+          name: object.key[0],
           key: `${bucket}/${object.key[0]}`,
-          modified: object.lastModified[0],
+          modified: new Date(object.lastModified[0]).getTime(),
           size: parseInt(object.size[0]),
           bucket,
-          downloadUrl: this.getObjectDownloadUrl(bucket, object.key[0])
+          url: this.getObjectDownloadUrl(bucket, object.key[0])
         };
       });
     });
@@ -138,28 +138,11 @@ class FpDataStore extends FpXhr {
   getObjectDownloadUrl(bucket, filename) {
     return `${this.datastoreUrl}/${bucket}/${filename}?token=${this.token}&type=cam&app_id=${this.appId}`;
   }
+  getObjectDownloadUrlByFilekey(fileKey) {
+    return `${this.datastoreUrl}/${fileKey}?token=${this.token}&type=cam&app_id=${this.appId}`;
+  }
 
-  uploadObject(definition, file, onProgress = null) {
-    let bucket = definition.bucket;
-    let filename = definition.filename;
-    console.log(bucket);
-    console.log(filename);
-
-    // // Replace extension if not .xlsx
-    // let fileNameSplit = filename.split('.')
-    // const fileNameSplitExtension = fileNameSplit.pop()
-    // fileNameSplit = fileNameSplit.join('.')
-    // const fileExtension = file.name.split('.').pop()
-    // if (fileExtension !== fileNameSplitExtension) {
-    //   filename = `${fileNameSplit}.${fileExtension}`
-    // }
-
-    // // Check for asian characters
-    // const regexpKorean = /[\uac00-\ud7af]|[\u1100-\u11ff]|[\u3130-\u318f]|[\ua960-\ua97f]|[\ud7b0-\ud7ff]/g
-    // if (filename.match(regexpKorean)) {
-    //   filename = filename.replace(regexpKorean, '')
-    // }
-
+  uploadObject({ filename, bucket, metadata }, blob, onProgress = null) {
     return new Promise((resolve, reject) => {
       var reader = new FileReader();
       reader.onload = event => {
@@ -171,14 +154,14 @@ class FpDataStore extends FpXhr {
         );
         user.groups = user.groups.map(group => group.name);
         let headers = {
-          "X-Amz-Meta-Original-File-Name": file.name,
+          "X-Amz-Meta-Original-File-Name": blob.name,
           "X-Amz-Meta-Author": user.uid,
           "X-Amz-Content-SHA256": hash
         };
-        let meta = definition.metadata || [];
+        let meta = metadata || [];
         for (let key in meta) {
           headers["X-Amz-Meta-" + key] = Mustache.to_html(meta[key], {
-            file,
+            blob,
             date: moment().format("YYYY-MM-DD"),
             datetime: moment().format("YYYY-MM-DD HH:mm:ss"),
             user
@@ -196,7 +179,7 @@ class FpDataStore extends FpXhr {
             }
           },
           url: path.join(bucket, filename),
-          data: file,
+          data: blob,
           headers: headers
         })
           .then(() => {
@@ -204,7 +187,7 @@ class FpDataStore extends FpXhr {
           })
           .catch(reject);
       };
-      reader.readAsArrayBuffer(file);
+      reader.readAsArrayBuffer(blob);
     });
   }
 
