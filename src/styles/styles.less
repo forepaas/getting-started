@@ -530,7 +530,34 @@ body {
   }
 }
 
+.fp-button {
+  background-color: #fafafa;
+  border: 1px solid #cacece;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05),
+    inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05);
+  padding: 7px;
+  border-radius: 3px;
+  display: inline-block;
+  position: relative;
+}
 
+.fp-button:hover {
+  cursor: pointer;
+  box-shadow: 0 1px 2px @primary-color, inset 0px 1px 3px @primary-color;
+  border: 1px solid @primary-color;
+}
 
+.fp-button:active {
+  background-color: #f0f0f0;
+}
+
+.fp-button:focus {
+  outline: none;
+}
+
+.fp-button:active {
+  box-shadow: 0 1px 2px @primary-color, inset 0px 1px 3px @primary-color;
+}
 @import "./authentication.less";
 @import "./parameters.less";
+@import "./modal.less";

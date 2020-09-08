@@ -1,0 +1,51 @@
+.fp-modal,
+.fp-modal-wrapper,
+.fp-modal-background {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 1000;
+}
+.fp-modal {
+  position: fixed;
+  .fp-modal-wrapper {
+    .fp-modal-background {
+      background: rgba(0, 0, 0, 0.5);
+      cursor: pointer;
+    }
+    .modal-dialog {
+      background: #fff;
+      position: absolute;
+      left: 13px;
+      right: 13px;
+      top: 100px;
+      bottom: 20px;
+      padding: 10px;
+      z-index: 2000;
+      .modal-content {
+        height: 100%;
+        .grid-layout .grid-layout-inner {
+          height: calc(~"100% - 23px") !important;
+        }
+        .modal-header .actions {
+          float: right;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
+.fp-toolbar-debug {
+  i {
+    cursor: pointer;
+  }
+  .fp-modal {
+    z-index: 3000;
+    .modal-body {
+      overflow: auto;
+      height: calc(~"100% - 40px");
+    }
+  }
+}

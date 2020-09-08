@@ -4,6 +4,7 @@
     "paths": {
       "src/*": ["./src/*"],
       "styles/*": ["./src/styles/*"],
+      "helpers/*": ["./src/helpers/*"],
       "config/*": ["./config/*"],
       "forepaas/*": ["./forepaas/*"],
       "forepaas.json": ["./forepaas.json"]

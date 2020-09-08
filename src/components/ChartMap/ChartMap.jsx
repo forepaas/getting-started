@@ -2,27 +2,9 @@ import React, { useEffect, useState } from 'react'
 import { Map as LeafletMap, CircleMarker, Popup, TileLayer } from 'react-leaflet'
 import MarkerClusterGroup from 'react-leaflet-markercluster'
 import { FpMeasure } from 'forepaas/formatter'
+import { flattenChartResults } from 'helpers'
 // import PropTypes from 'prop-types'
 
-const flattenChartResults = results => {
-  let flattenedChartResults = []
-  results.forEach(result => {
-    let fieldEntries = []
-    Object.entries(result.data).forEach(([fieldName, computeModes]) => {
-      Object.entries(computeModes).forEach(([computeModeName, rows]) => {
-        computeModeName === 'select'
-          ? fieldEntries.push([computeModeName, rows[0].value])
-          : fieldEntries.push([`${fieldName}_${computeModeName}`, rows[0].value])
-      })
-    })
-    let flattenedObject = {
-      ...result.scales,
-      ...Object.fromEntries(fieldEntries)
-    }
-    flattenedChartResults.push(flattenedObject)
-  })
-  return flattenedChartResults
-}
 
 const ChartMap = (props) => {
   const [stations, setStations] = useState([])

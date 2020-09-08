@@ -4,15 +4,15 @@
   "height": 100,
   "margin": [10, 10],
   "description": "",
+
   "items": [
     {
       "type": "file-explorer",
+      "id": "file-explorer",
       "sizeX": 100,
-      "sizeY": 100,
-      "row": 0,
-      "col": 0,
-      "dashboardName": "Learn",
-      "fileName": "learn.json"
+      "sizeY": 86,
+      "row": 10,
+      "col": 0
     }
   ],
   "url": "/learn",
