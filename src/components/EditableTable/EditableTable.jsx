@@ -69,8 +69,9 @@ const EditableTable = ({ options }) => {
       header: true,
       beforeFirstChunk: (...args) => { setProgressLoad(0) },
       complete: (results) => {
+        console.log(results)
         setProgressLoad(80)
-        resetRows(results.data.map((result, index) => { return { id: index, index, ...result } }))
+        resetRows(results.data.map((result, _index) => { return { _id: _index, _index, ...result } }))
         setMeta(results.meta)
         setColumns([...defaultColumns, ...results.meta.fields.map(field => { return { "key": field, "name": field, ...defaultColumnProperties } })])
         setProgressLoad(100)
@@ -99,13 +100,13 @@ const EditableTable = ({ options }) => {
   };
 
   const setRowsAfterSort = (sortColumn, sortDirection) => {
-    const newRows = sortRows(rows, sortColumn, sortDirection).map((row, index) => { return { ...row, index } })
+    const newRows = sortRows(rows, sortColumn, sortDirection).map((row, _index) => { return { ...row, _index } })
     setSkipPastRows(newRows)
   }
 
   const saveRows = async () => {
     setProgressSave(0)
-    let rowsToSave = sortRows(rows, "", "NONE").map(({ id, index, ...rest }) => rest)
+    let rowsToSave = sortRows(rows, "", "NONE").map(({ _id, __index, ...rest }) => rest)
     const textCSV = jsonToCSV(rowsToSave, meta)
     let contentType = 'text/csv';
     let csvFile = new Blob([textCSV], { type: contentType });
@@ -123,24 +124,24 @@ const EditableTable = ({ options }) => {
   const cellActions = (column, row) => {
     return column.key === "actions" &&
       [{
-        icon: <span style={{ color: "red" }} className="fa fa-remove" />,
+        icon: "fa fa-remove",
         callback: () => {
           deleteRow(row)
         }
       },
       {
-        icon: <span className="fa fa-plus" />,
+        icon: "fa fa-plus",
         actions: [
           {
             text: "Insert Before",
             callback: () => {
-              setRows(insertRow(row.index))
+              setRows(insertRow(row._index))
             }
           },
           {
             text: "Insert After",
             callback: () => {
-              setRows(insertRow(row.index + 1))
+              setRows(insertRow(row._index + 1))
             }
           }
         ]
@@ -149,18 +150,17 @@ const EditableTable = ({ options }) => {
 
   const deleteRow = (rowToDelete) => {
     let updatedRows = [...rows]
-    updatedRows = updatedRows.filter(row => row.id !== rowToDelete.id)
+    updatedRows = updatedRows.filter(row => row._id !== rowToDelete._id)
     setRows(updatedRows)
   }
 
   const insertRow = rowIdx => {
-    const newId = rowIdx !== 0 ? rowIdx < rows.length ? (rows[rowIdx - 1].id + rows[rowIdx].id) / 2 : rows.length : -1
-    console.log(newId)
+    const newId = rowIdx !== 0 ? rowIdx < rows.length ? (rows[rowIdx - 1]._id + rows[rowIdx]._id) / 2 : rows.length : -1
     let newRow = Object.fromEntries(Object.entries(rows[0]).map(([key, value]) => [key, ""]));
-    newRow = { ...newRow, id: newId }
+    newRow = { ...newRow, _id: newId }
     let nextRows = [...rows];
     nextRows.splice(rowIdx, 0, newRow);
-    nextRows = nextRows.map((row, index) => { return { ...row, index } })
+    nextRows = nextRows.map((row, _index) => { return { ...row, _index } })
     return nextRows;
   };
 
@@ -206,6 +206,7 @@ const EditableTable = ({ options }) => {
             onGridRowsUpdated={onGridRowsUpdated}
             enableCellSelect={true}
             getCellActions={cellActions}
+            minHeight={325}
           />
         </div>}
     </div >)

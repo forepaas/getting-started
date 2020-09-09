@@ -23,8 +23,8 @@
         },
         {
           "type": "link",
-          "text": "Learn",
-          "url": "/learn"
+          "text": "Edit",
+          "url": "/edit"
         }
       ],
       "name": "tabs"

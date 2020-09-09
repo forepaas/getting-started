@@ -5,8 +5,7 @@ import FpDatastore from 'src/services/FpDatastore'
 import 'react-keyed-file-browser/dist/react-keyed-file-browser.css';
 import FileBrowser, { Icons } from 'react-keyed-file-browser'
 import FileSaver from 'file-saver'
-import useSWR from 'swr'
-// import PropTypes from 'prop-types'
+
 
 import EditableTable from "../EditableTable"
 

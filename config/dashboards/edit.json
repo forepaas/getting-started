@@ -1,5 +1,5 @@
 {
-  "name": "Learn",
+  "name": "Edit",
   "width": 100,
   "height": 100,
   "margin": [10, 10],
@@ -10,12 +10,12 @@
       "type": "file-explorer",
       "id": "file-explorer",
       "sizeX": 100,
-      "sizeY": 86,
-      "row": 10,
+      "sizeY": 120,
+      "row": 1,
       "col": 0
     }
   ],
-  "url": "/learn",
+  "url": "/edit",
   "path": "",
   "tags": []
 }

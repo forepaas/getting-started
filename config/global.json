@@ -16,7 +16,7 @@
   ],
   "dashboarding": {
     "/rides-analytics": "file://config/dashboards/rides-analytics.json",
-    "/learn": "file://config/dashboards/learn.json"
+    "/edit": "file://config/dashboards/edit.json"
   },
   "style": "file://config/style.json",
   "reportings": "file://config/reportings.json",
