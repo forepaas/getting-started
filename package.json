@@ -25,7 +25,7 @@
     "prop-types": "^15.6.0",
     "react-checkbox-group": "^5.0.2",
     "react-data-grid": "^4.0.7",
-    "react-date-range": "git+https://github.com/drappier-charles/react-date-range.git",
+    "react-date-range": "^1.0.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-grid-layout": "^0.14.7",
