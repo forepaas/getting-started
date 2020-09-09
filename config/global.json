@@ -4,7 +4,7 @@
   "application_name": "{{ENV.APP_NAME || 'ForePaaS'}}",
   "debug": "{{ENV.DEBUG}}",
   "loader": "spinner",
-  "lang": "fr",
+  "lang": "en",
   "version": 3,
   "storage": {
     "type": "sessionStorage"
