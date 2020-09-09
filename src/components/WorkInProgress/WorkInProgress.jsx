@@ -1,5 +1,5 @@
 import React from 'react'
-import logo from 'assets/img/developer-wip.png'
+import logo from './developer-wip.png'
 import PropTypes from 'prop-types'
 
 const WorkInProgress = ({ dashboardName, fileName }) => {

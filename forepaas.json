@@ -67,10 +67,6 @@
     "xhr": {
       "version": "1.0.0"
     },
-    "webpack": {
-      "version": "1.3.0",
-      "root": true
-    },
     "chart-table": {
       "version": "2.1.0"
     }
