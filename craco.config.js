@@ -32,6 +32,7 @@ module.exports = {
         excludes: [/(node_modules|bower_components)/]
       }
     },
+    { plugin: CracoExtendScope, options: { path: "assets" } },
     { plugin: CracoExtendScope, options: { path: "config" } },
     { plugin: CracoExtendScope, options: { path: "forepaas" } },
     { plugin: CracoExtendScope, options: { path: "forepaas.json" } }
