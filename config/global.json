@@ -22,5 +22,6 @@
   "i18n": {
     "en": "file://config/i18n/en.json"
   },
-  "formatter": "file://config/formatter.json"
+  "formatter": "file://config/formatter.json",
+  "templates": "file://config/templates.json"
 }
