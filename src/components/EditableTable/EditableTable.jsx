@@ -69,7 +69,6 @@ const EditableTable = ({ options }) => {
       header: true,
       beforeFirstChunk: (...args) => { setProgressLoad(0) },
       complete: (results) => {
-        console.log(results)
         setProgressLoad(80)
         resetRows(results.data.map((result, _index) => { return { _id: _index, _index, ...result } }))
         setMeta(results.meta)
@@ -106,7 +105,7 @@ const EditableTable = ({ options }) => {
 
   const saveRows = async () => {
     setProgressSave(0)
-    let rowsToSave = sortRows(rows, "", "NONE").map(({ _id, __index, ...rest }) => rest)
+    let rowsToSave = sortRows(rows, "", "NONE").map(({ _id, _index, ...rest }) => rest)
     const textCSV = jsonToCSV(rowsToSave, meta)
     let contentType = 'text/csv';
     let csvFile = new Blob([textCSV], { type: contentType });
