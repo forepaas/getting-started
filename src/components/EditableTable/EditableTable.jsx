@@ -3,12 +3,13 @@ import React, { useState, useEffect } from 'react'
 import FpDatastore from 'src/services/FpDatastore'
 import FpDpe from 'src/services/FpDpe'
 import useUndo from "./useUndo"
-import { debounce } from "lodash"
 import FpToaster from 'forepaas/toaster'
 import LoadingBar from 'react-top-loading-bar'
 
 
 import DataGrid from 'react-data-grid';
+import CellActionsFormatter from './CellActionsFormatter';
+import 'react-data-grid/dist/react-data-grid.css';
 import { readRemoteFile, jsonToCSV } from 'react-papaparse'
 import { useHotkeys } from 'react-hotkeys-hook';
 
@@ -19,11 +20,13 @@ const dpe = new FpDpe()
 
 
 const EditableTable = ({ options }) => {
+  const [fileColumns, setFileColumns] = useState([])
   const [columns, setColumns] = useState([])
   const { fileName, bucketName } = options
   const [meta, setMeta] = useState({})
   const [progressLoad, setProgressLoad] = useState(0)
   const [progressSave, setProgressSave] = useState(0)
+  const [[sortColumn, sortDirection], setSort] = useState(['id', 'NONE']);
 
   const [
     rowsState,
@@ -59,26 +62,27 @@ const EditableTable = ({ options }) => {
     resizable: true,
   };
 
-  /* Default columns : actions column (allows to add/remove rows) */
-  const defaultColumns = [{ key: "actions", name: "", width: 60 }]
-
 
   /* Load a file from the datastore, uses the buckerName and the fileName provided in the options */
   const loadDatasheet = (bucketName, fileName) => {
+    resetRows([])
+    setMeta({})
+    setFileColumns([])
+    setProgressLoad(0)
     readRemoteFile(datastore.getObjectDownloadUrl(bucketName, fileName), {
       header: true,
-      beforeFirstChunk: (...args) => { setProgressLoad(0) },
+      beforeFirstChunk: (...args) => {
+        setProgressLoad(50)
+      },
       complete: (results) => {
-        setProgressLoad(80)
-        resetRows(results.data.map((result, _index) => { return { _id: _index, _index, ...result } }))
+        const fileRows = results.data.map((result, _index) => { return { _id: _index, _index, ...result } })
+        resetRows(fileRows)
         setMeta(results.meta)
-        setColumns([...defaultColumns, ...results.meta.fields.map(field => { return { "key": field, "name": field, ...defaultColumnProperties } })])
+        setFileColumns([...results.meta.fields.map(field => { return { "key": field, "name": field, ...defaultColumnProperties } })])
         setProgressLoad(100)
       },
       error: (error) => {
-        resetRows([])
-        setMeta({})
-        setColumns([])
+        console.error(error)
         setProgressLoad(100)
       }
     })
@@ -86,6 +90,41 @@ const EditableTable = ({ options }) => {
 
   /* Load a new file from the datastore each time the bucketName or the fileName changes */
   useEffect(() => loadDatasheet(bucketName, fileName), [bucketName, fileName])
+
+  useEffect(() => setColumns([...defaultColumns, ...fileColumns]), [fileColumns, rows])
+
+
+  const editActions = (row) => {
+    return [
+      {
+        icon: <i className='fa fa-plus'></i>,
+        actions: [
+          {
+            text: "Insert Before",
+            callback: () => {
+              setRows(insertRow(row._index))
+            }
+          },
+          {
+            text: "Insert After",
+            callback: () => {
+              setRows(insertRow(row._index + 1))
+            }
+          }
+        ]
+      }, {
+        icon: <i className='fa fa-remove'></i>,
+        callback: () => {
+          deleteRow(row)
+        }
+      }]
+  }
+
+  const actionFormatter = (row) => <CellActionsFormatter actions={editActions(row)} />
+
+  /* Default columns : actions column (allows to add/remove rows) */
+  const defaultColumns = [{ key: "actions", name: "", width: 20, formatter: ({ row }) => actionFormatter(row) }]
+
 
   const sortRows = (initialRows, sortColumn, sortDirection) => {
     const comparer = (a, b) => {
@@ -119,40 +158,11 @@ const EditableTable = ({ options }) => {
     }
   }
 
-
-  const cellActions = (column, row) => {
-    return column.key === "actions" &&
-      [{
-        icon: "fa fa-remove",
-        callback: () => {
-          deleteRow(row)
-        }
-      },
-      {
-        icon: "fa fa-plus",
-        actions: [
-          {
-            text: "Insert Before",
-            callback: () => {
-              setRows(insertRow(row._index))
-            }
-          },
-          {
-            text: "Insert After",
-            callback: () => {
-              setRows(insertRow(row._index + 1))
-            }
-          }
-        ]
-      }]
-  }
-
   const deleteRow = (rowToDelete) => {
     let updatedRows = [...rows]
     updatedRows = updatedRows.filter(row => row._id !== rowToDelete._id)
     setRows(updatedRows)
   }
-
   const insertRow = rowIdx => {
     const newId = rowIdx !== 0 ? rowIdx < rows.length ? (rows[rowIdx - 1]._id + rows[rowIdx]._id) / 2 : rows.length : -1
     let newRow = Object.fromEntries(Object.entries(rows[0]).map(([key, value]) => [key, ""]));
@@ -163,13 +173,18 @@ const EditableTable = ({ options }) => {
     return nextRows;
   };
 
-  const onGridRowsUpdated = debounce(({ fromRow, toRow, updated }) => {
+  const handleRowsUpdate = ({ fromRow, toRow, updated }) => {
     const updatedRows = rows.slice();
     for (let i = fromRow; i <= toRow; i++) {
       updatedRows[i] = { ...updatedRows[i], ...updated };
     }
     setRows(updatedRows)
-  }, 100)
+  }
+
+  const handleSort = (columnKey, direction) => {
+    setSort([columnKey, direction])
+    setRowsAfterSort(columnKey, direction)
+  }
 
   return (
     <div>
@@ -183,7 +198,7 @@ const EditableTable = ({ options }) => {
         progress={progressSave}
         onLoaderFinished={() => setProgressSave(0)}
       />
-      {(columns.length > 0 && rows.length > 0) &&
+      {(fileColumns.length > 0 && rows.length > 0) &&
         <div>
           <div className="toolbar">
             <div className="left-toolbar">
@@ -197,15 +212,13 @@ const EditableTable = ({ options }) => {
           </div>
           <DataGrid
             columns={columns}
-            rowGetter={i => rows[i]}
-            rowsCount={rows.length}
-            onGridSort={(sortColumn, sortDirection) =>
-              setRowsAfterSort(sortColumn, sortDirection)
-            }
-            onGridRowsUpdated={onGridRowsUpdated}
-            enableCellSelect={true}
-            getCellActions={cellActions}
-            minHeight={325}
+            rows={rows}
+            setRows={setRows}
+            onSort={handleSort}
+            onRowsUpdate={handleRowsUpdate}
+            sortColumn={sortColumn}
+            sortDirection={sortDirection}
+            className="fill-grid"
           />
         </div>}
     </div >)
