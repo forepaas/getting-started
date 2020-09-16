@@ -21,6 +21,16 @@
       "round": "0",
       "unit": "",
       "mult": ""
+    },
+    "ml_predict": {
+      "round": "0",
+      "unit": "",
+      "mult": ""
+    },
+    "ml_target": {
+      "round": "0",
+      "unit": "",
+      "mult": ""
     }
   },
   "dimensions": {

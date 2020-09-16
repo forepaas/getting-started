@@ -25,6 +25,11 @@
           "type": "link",
           "text": "Learn",
           "url": "/learn"
+        },
+        {
+          "type": "link",
+          "text": "Predict",
+          "url": "/predict"
         }
       ],
       "name": "tabs"
