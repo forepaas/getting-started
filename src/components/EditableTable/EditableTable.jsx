@@ -1,4 +1,3 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useState, useEffect } from 'react'
 import FpDatastore from 'src/services/FpDatastore'
 import FpDpe from 'src/services/FpDpe'

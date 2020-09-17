@@ -9,6 +9,9 @@
     {
       "type": "file-explorer",
       "id": "file-explorer",
+      "options": {
+        "workflowId": "5ebaa0c8430dc9b96fb6f73e"
+      },
       "sizeX": 100,
       "sizeY": 120,
       "row": 1,

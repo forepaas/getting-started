@@ -9,6 +9,7 @@ import DynamicParameterAutocompleteBox from "./DynamicParameterAutocompleteBox";
 import ChartMap from "./ChartMap";
 import FileExplorer from "./FileExplorer";
 import EditableTable from "./EditableTable";
+import LaunchWorkflow from "./LaunchWorkflow";
 
 export default {
   components: {
@@ -20,7 +21,8 @@ export default {
     DynamicParameterAutocompleteBox,
     ChartMap,
     FileExplorer,
-    EditableTable
+    EditableTable,
+    LaunchWorkflow
   },
   camelCaseToDash(myStr) {
     return myStr.replace(/([a-z])([A-Z])/g, "$1-$2").toLowerCase();
