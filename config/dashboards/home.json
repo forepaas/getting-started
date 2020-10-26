@@ -1,5 +1,5 @@
 {
-  "name": "Rides analytics",
+  "name": "Home",
   "width": 100,
   "height": 100,
   "margin": [
@@ -8,7 +8,7 @@
   ],
   "description": "",
   "items": [],
-  "url": "/rides-analytics",
+  "url": "/home",
   "path": "",
   "tags": []
 }

@@ -9,16 +9,15 @@
   "storage": {
     "type": "sessionStorage"
   },
-  "root": "/",
+  "root": "/home",
   "menu": [
     "file://config/menus/header.json",
     "file://config/menus/sidebar.json"
   ],
   "dashboarding": {
-  	"/rides-analytics": "file://config/dashboards/rides-analytics.json"
+    "/home": "file://config/dashboards/home.json"
   },
   "style": "file://config/style.json",
-  "reportings": "file://config/reportings.json",
   "i18n": {
     "en": "file://config/i18n/en.json",
     "fr": "file://config/i18n/fr.json"

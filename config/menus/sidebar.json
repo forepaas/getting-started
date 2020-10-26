@@ -1,17 +1,13 @@
 {
   "id": "sidebar",
   "class": "sidebar",
-  "containers": [
-    {
-      "id": "footer",
-      "class": "footer",
-      "items": [
-        {
-          "type": "html",
-          "content": "<a href='https://www.forepaas.com' target='_blank'>Powered by <img src='assets/img/powered.png'></a>",
-          "label": "Footer"
-        }
-      ]
-    }
-  ]
+  "containers": [{
+    "id": "footer",
+    "class": "footer",
+    "items": [{
+      "type": "html",
+      "content": "<a href='https://www.forepaas.com' target='_blank'>Powered by <img src='assets/img/powered.png'></a>",
+      "label": "Footer"
+    }]
+  }]
 }

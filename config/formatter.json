@@ -11,16 +11,6 @@
     "mega": {
       "round": 1,
       "mult": "0.000001"
-    },
-    "rides": {
-      "round": "0",
-      "unit": " pax",
-      "mult": ""
-    },
-    "avg_rides_per_day_per_station": {
-      "round": "0",
-      "unit": "",
-      "mult": ""
     }
   },
   "dimensions": {
