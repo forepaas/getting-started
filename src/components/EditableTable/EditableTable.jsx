@@ -218,7 +218,7 @@ const EditableTable = ({ options }) => {
             onRowsUpdate={handleRowsUpdate}
             sortColumn={sortColumn}
             sortDirection={sortDirection}
-            className="fill-grid"
+            className="fill-grid rdg-light"
           />
         </div>}
     </div >)
