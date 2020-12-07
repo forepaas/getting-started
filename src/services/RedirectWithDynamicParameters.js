@@ -14,7 +14,11 @@ import Store from 'forepaas/store'
   render() {
     toDashboard = 'another_page'
     categoryID = 'my-category'
-    return '<a href="#" onClick={() => redirectWithDynamicParameters(toDashboard, {dynCategory: categoryID})}>link to</a>'
+    return 
+	  '<a href="#" onClick={(e) => {
+        e.preventDefault()
+        redirectWithDynamicParameters(toDashboard, {dynCategory: categoryID})
+      }}>more details...</a>'
   }
 **/
 const redirectWithDynamicParameters = (dashboard = null, newDynamicParameters = {}, newState = {}) => {
