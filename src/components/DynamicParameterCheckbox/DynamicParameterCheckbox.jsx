@@ -1,27 +1,27 @@
 import React, { useEffect, useState } from 'react'
 import CheckboxGroup from 'react-checkbox-group'
-import { connect } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
 import { set } from 'forepaas/store/querystring/action'
 
 const DynamicParameterCheckbox = (props) => {
   const [expanded, setExpanded] = useState(true)
   // Checked options array
   const [selectedOptions, setSelectedOptions] = useState([])
+  const options = useSelector((state) => state.querystring[props.id])
+  const dispatch = useDispatch()
 
-  useEffect(() => {
-    const selectedOptions = props.querystring[props.id] || []
-    setSelectedOptions(selectedOptions)
-  }, [props.items])
+  useEffect (() => {
+    setSelectedOptions(options)
+  }, [options])
 
   const onChange = (options) => {
-    setSelectedOptions(options)
     updateModel(options)
   }
 
   const updateModel = (model) => {
     if (props.id) {
-      let value = model.map((item) => item && item.value ? item.value : item)
-      props.dispatch(set(props.id, value.length ? value : null))
+      let value = (model || []).map((item) => item && item.value ? item.value : item)
+      dispatch(set(props.id, value.length ? value : null))
     }
   }
 
@@ -30,7 +30,7 @@ const DynamicParameterCheckbox = (props) => {
       <div className='dyn-title checkbox-header'>
         {props.title}
         <i onClick={() => setExpanded(!expanded)} className={`fa fa-chevron-${expanded ? 'down' : 'right'} expand-icon`} /></div>
-      {expanded && <CheckboxGroup name='options' value={selectedOptions} onChange={onChange}>
+      {expanded && <CheckboxGroup name='options' value={selectedOptions || []} onChange={onChange}>
         {(Checkbox) => (
           <React.Fragment>
             {props.items.map(option =>
@@ -49,4 +49,5 @@ const DynamicParameterCheckbox = (props) => {
 
 DynamicParameterCheckbox.propTypes = {}
 
-export default connect(state => ({ querystring: state.querystring }))(DynamicParameterCheckbox)
+export default DynamicParameterCheckbox
+
