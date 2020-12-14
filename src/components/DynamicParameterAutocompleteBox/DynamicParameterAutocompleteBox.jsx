@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
-import { connect } from 'react-redux'
-import Select from 'react-select'
+import Select, { createFilter }  from 'react-select'
+import { useSelector, useDispatch } from 'react-redux'
 import { set } from 'forepaas/store/querystring/action'
 
 const searchIcon = () => ({
@@ -77,6 +77,9 @@ const customStyles = {
 
 const DynamicParameterAutocompleteBox = ({ items, ...props }) => {
   const [selectedOptions, setSelectedOptions] = useState([])
+  const selectedValues = useSelector((state) => state.querystring[props.id])
+  const dispatch = useDispatch()
+  items.sort((a,b) => (a.label > b.label) ? 1 : ((b.label > a.label) ? -1 : 0))
 
   const customTheme = theme => ({
     ...theme,
@@ -91,27 +94,42 @@ const DynamicParameterAutocompleteBox = ({ items, ...props }) => {
     }
   })
 
-  useEffect(() => {
-    const selectedValues = props.querystring[props.id] || []
-    const mappedOptions = items.filter(item => selectedValues.includes(item.value))
+  useEffect (() => {
+    const mappedOptions = items.filter(item => (selectedValues || []).includes(item.value))
     setSelectedOptions(mappedOptions)
-  }, [items])
+  }, [selectedValues, items])
 
   const updateModel = (model) => {
     if (props.id) {
-      let selectedValues = model && model.length ? model.map((item) => item && item.value ? item.value : item) : []
-      props.dispatch(set(props.id, selectedValues.length ? selectedValues : null))
+      let values = (model || []).map((item) => item && item.value ? item.value : item)
+      dispatch(set(props.id, values.length ? values : null))
     }
   }
 
   const onChange = (options) => {
-    setSelectedOptions(options)
+    if (options && !Array.isArray(options)) {
+      options = [options]
+    }
     updateModel(options)
   }
 
   return (
-    <Select value={selectedOptions} styles={customStyles} theme={customTheme} options={items} isMulti={props.isMulti} placeholder={props.placeholder} onChange={onChange} />
+    <Select 
+      value={selectedOptions || []} 
+      styles={customStyles} theme={customTheme} 
+      options={items} 
+      isMulti={props.isMulti}
+      placeholder={props.placeholder}
+      onChange={onChange} 
+      autoFocus={true}
+      isClearable={true}
+      isSearchable={true}
+      pageSize={10}
+      closeMenuOnSelect={true}
+      filterOption={createFilter({ignoreCase: true, ignoreAccents: true, trim: true, matchFrom: 'start'})}
+    />
   )
 }
 
-export default connect(state => ({ querystring: state.querystring }))(DynamicParameterAutocompleteBox)
+export default DynamicParameterAutocompleteBox
+
