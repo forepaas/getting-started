@@ -18,6 +18,14 @@
             "id": "dynamic-date",
             "component": "datepicker",
             "reference": "range_date",
+            "request": {
+              "data": {
+                "fields": {
+                  "date": ["max"]
+                }
+              },
+              "table_name": "dataset_history"
+            },
             "ranges": [
               {
                 "label": "Last Week",
@@ -50,11 +58,10 @@
                 "scale": "day"
               }
             ],
-            "items": [],
-            "startAt": "subtract(1,'year').startOf('year')",
+            "startAt": "startOf('year')",
             "minDate": "subtract(1,'year').startOf('year')",
-            "maxDate": "subtract(1,'year').endOf('year')",
-            "endAt": "subtract(1,'year').endOf('year')"
+            "maxDate": "endOf('year')",
+            "endAt": "endOf('year')"
           },
           "label": "Date",
           "style": {
