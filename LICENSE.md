@@ -1,6 +1,6 @@
 ForePaaS ReactJS SDK (the “Software”)
 
-Copyright (C) ForePaaS SAS
+Copyright (C) ForePaaS SAS.
 
 License last updated: May 7, 2018
 
