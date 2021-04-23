@@ -5,6 +5,7 @@
       "src/*": ["./src/*"],
       "styles/*": ["./src/styles/*"],
       "helpers/*": ["./src/helpers/*"],
+      "assets/*": ["./assets/*"],
       "config/*": ["./config/*"],
       "forepaas/*": ["./forepaas/*"],
       "forepaas.json": ["./forepaas.json"]
