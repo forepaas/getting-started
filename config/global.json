@@ -19,7 +19,6 @@
     "/learn": "file://config/dashboards/learn.json"
   },
   "style": "file://config/style.json",
-  "reportings": "file://config/reportings.json",
   "i18n": {
     "en": "file://config/i18n/en.json",
     "fr": "file://config/i18n/fr.json"
