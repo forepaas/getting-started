@@ -89,7 +89,6 @@
       ]
     }
   },
-
   "recharts.bar": {
     "options": {
       "xAxis": {
@@ -115,27 +114,27 @@
   "recharts.scatter": {
     "extends": "recharts",
     "options": {
-      "xAxis" : {
-      "tickStyle": {
-        "y": -10,
-        "fontSize": 12
+      "xAxis": {
+        "tickStyle": {
+          "y": -10,
+          "fontSize": 12
+        },
+        "labelStyle": {
+          "fill": "#97A7B7",
+          "fontSize": 14,
+          "offset": -25
+        }
       },
-      "labelStyle": {
-        "fill": "#97A7B7",
-        "fontSize": 14,
-       "offset" : -25
+      "yAxis": {
+        "labelStyle": {
+          "fill": "#97A7B7",
+          "fontSize": 14,
+          "angle": -92,
+          "position": "left",
+          "offset": -2
+        }
       }
-  },
-  "yAxis" : {
-    "labelStyle": {
-      "fill": "#97A7B7",
-      "fontSize": 14,
-      "angle" : -92,
-      "position" : "left",
-      "offset" : -2
     }
-}
-}
   },
   "recharts.line": {
     "extends": "recharts"
