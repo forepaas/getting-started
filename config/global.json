@@ -14,9 +14,7 @@
     "file://config/menus/header.json",
     "file://config/menus/sidebar.json"
   ],
-  "dashboarding": {
-    "/rides-analytics": "file://config/dashboards/rides-analytics.json"
-  },
+  "dashboarding": {},
   "style": "file://config/style.json",
   "i18n": {
     "en": "file://config/i18n/en.json",
