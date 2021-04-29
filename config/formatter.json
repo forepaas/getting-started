@@ -1,4 +1,8 @@
 {
+  "separator": {
+    "thousand": " ",
+    "decimal": "."
+  },
   "measures": {
     "pct": {
       "unit": "%",
