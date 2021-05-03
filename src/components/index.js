@@ -1,18 +1,20 @@
 import FpSdk from 'forepaas/sdk'
 
 import DashboardTitle from './DashboardTitle'
-import Hello from './Hello'
 import Username from './Username'
 import Toaster from './Toaster'
 import WorkInProgress from './WorkInProgress'
+import FpDashBlock from './FpDashBlock'
+import FpMenuCollapse from './FpMenuCollapse'
 
 export default {
   components: {
     DashboardTitle,
-    Hello,
     Username,
     Toaster,
-    WorkInProgress
+    WorkInProgress,
+    FpDashBlock,
+    FpMenuCollapse
   },
   camelCaseToDash (myStr) {
     return myStr.replace(/([a-z])([A-Z])/g, '$1-$2').toLowerCase()

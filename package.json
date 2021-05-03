@@ -40,7 +40,26 @@
     "redux": "^4.0.5",
     "redux-logger": "^3.0.6",
     "redux-thunk": "^2.2.0",
-    "sortablejs": "^1.7.0"
+    "sortablejs": "^1.7.0",
+    "babel-polyfill": "^6.26.0",
+    "chart.js": "^2.7.2",
+    "chartist": "^0.11.0",
+    "chartjs-plugin-datalabels": "^0.5.0",
+    "color-string": "^1.5.2",
+    "echarts": "^3.8.5",
+    "esdoc-jsx-plugin": "^1.0.0",
+    "fixed-data-table-2": "^0.8.1",
+    "geocoding": "^1.0.5",
+    "jquery": "^3.3.1",
+    "jvectormap": "^2.0.4",
+    "jvectormap-next": "^3.0.0",
+    "mdi": "^2.1.99",
+    "morris.js": "^0.5",
+    "node-waves": "^0.7.6",
+    "raphael": "^2.2.7",
+    "react-google-charts": "^1.5.5",
+    "react-table": "^6.8.6",
+    "react-toggle": "^4.0.2"
   },
   "scripts": {
     "start": "craco start",
@@ -48,7 +67,9 @@
     "test": "craco test",
     "fppm": "npx git+https://gitlab.forepaas.com/open-sources/fppm.git",
     "zip": "./scripts/utils/zip.sh",
-    "generate": "plop --plopfile ./scripts/generators/index.js"
+    "generate": "plop --plopfile ./scripts/generators/index.js",
+    "doc": "./node_modules/.bin/esdoc",
+    "lint": "eslint --ext .js,.jsx ."
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -67,6 +88,16 @@
   },
   "devDependencies": {
     "@babel/plugin-proposal-decorators": "^7.10.5",
-    "plop": "^2.7.4"
+    "plop": "^2.7.4",
+    "array-find": "^1.0.0",
+    "array-find-index": "^1.0.2",
+    "chalk": "^2.3.0",
+    "empty-module": "0.0.2",
+    "esdoc": "^1.0.4",
+    "esdoc-ecmascript-proposal-plugin": "^1.0.0",
+    "esdoc-standard-plugin": "^1.0.0",
+    "fs-extra": "^4.0.2",
+    "object-assign": "4.1.1",
+    "promise": "8.0.1"
   }
 }
