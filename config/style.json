@@ -1,24 +1,23 @@
 {
   "selectbox": {
+    "dropdownIcon": {
+      "fontSize": 12,
+      "paddingLeft": 10,
+      "paddingRight": 10
+    },
     "input": {
       "height": 26
     },
     "indicatorsContainer": {
       "height": 34
     },
-    "dropdownIcon": {
-      "fontSize": 12,
-      "padding": 10
-    },
     "control": {
-      "fontSize": 12,
-      "width": 250,
-      "borderRadius": 5,
+      "cursor": "pointer",
       "maxHeight": 36,
       "height": 36,
       "minHeight": 0,
       "padding": 0,
-      "borderColor": "lightGrey",
+      "borderColor": "rgba(151,167,183,0.21)",
       "boxShadow": "none!important"
     },
     "multiValue": {
@@ -32,20 +31,18 @@
       "color": "white"
     },
     "optionsSelected": {
-      "background": "lightGrey",
+      "background": "#617DE9",
       "color": "#ffffff"
     },
-    "optionsFocused": {
-      "background": "white",
-      "fontSize": 16,
-      "fontWeight": 700
-    },
+    "optionsFocused": {},
     "menuList": {
       "padding": 0
     },
+    "option": {
+      "cursor": "pointer"
+    },
     "menu": {
-      "margin": 0,
-      "fontSize": 12
+      "margin": 0
     }
   }
 }

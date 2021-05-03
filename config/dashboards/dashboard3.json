@@ -1,0 +1,254 @@
+{
+  "name": "Dashboard",
+  "width": 12,
+  "height": 12,
+  "description": "",
+  "margin": [
+    0,
+    0
+  ],
+  "items": [
+    {
+      "type": "panel",
+      "col": 0,
+      "row": 0,
+      "sizeX": 12,
+      "locked": true,
+      "customclass": "header-panel-dark",
+      "sizeY": 5,
+      "items": [
+        {
+          "type": "chart",
+          "col": 0,
+          "row": 0,
+          "sizeX": 4,
+          "sizeY": 3,
+          "locked": true,
+          "title": "",
+          "chart": {
+            "dynamic-parameters": [
+              "datepicker"
+            ],
+            "component": "html",
+            "id": "dashboard-block",
+            "request": {
+              "data": {
+                "fields": {
+                  "ca": [
+                    "sum"
+                  ]
+                }
+              },
+              "evol": {
+                "scale": "month"
+              },
+              "total": {
+                "graph": [
+                  "year",
+                  "month"
+                ]
+              }
+            },
+            "options": {
+              "template-name": "evol",
+              "class": "red",
+              "icon": "vl_clip-board",
+              "text": "Ordered Received"
+            }
+          }
+        },
+        {
+          "type": "chart",
+          "col": 4,
+          "row": 0,
+          "sizeX": 4,
+          "sizeY": 3,
+          "title": "",
+          "locked": true,
+          "chart": {
+            "dynamic-parameters": [
+              "datepicker"
+            ],
+            "component": "html",
+            "id": "dashboard-block",
+            "request": {
+              "data": {
+                "fields": {
+                  "ca": [
+                    "sum"
+                  ]
+                }
+              },
+              "evol": {
+                "scale": "month"
+              },
+              "total": {
+                "graph": [
+                  "year",
+                  "month"
+                ]
+              }
+            },
+            "options": {
+              "template-name": "evol",
+              "class": "blue",
+              "icon": "vl_cart-full",
+              "text": "Total Sales"
+            }
+          }
+        },
+        {
+          "type": "chart",
+          "col": 8,
+          "row": 0,
+          "sizeX": 4,
+          "sizeY": 3,
+          "title": "",
+          "locked": true,
+          "chart": {
+            "dynamic-parameters": [
+              "datepicker"
+            ],
+            "component": "html",
+            "id": "dashboard-block",
+            "request": {
+              "data": {
+                "fields": {
+                  "ca": [
+                    "sum"
+                  ]
+                }
+              },
+              "total": {
+                "graph": [
+                  "year",
+                  "month"
+                ]
+              }
+            },
+            "options": {
+              "template-name": "block",
+              "class": "yellow",
+              "icon": "vl_dollar-on-hand",
+              "text": "Total Profit"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "type": "panel",
+      "col": 0,
+      "row": 5,
+      "sizeX": 8,
+      "sizeY": 15,
+      "title": "",
+      "items": [
+        {
+          "type": "html",
+          "col": 0,
+          "row": 0,
+          "sizeX": 12,
+          "sizeY": 1,
+          "content": "<h6 class='no-margin'>Overview</h6>"
+        },
+        {
+          "type": "chart",
+          "col": 0,
+          "row": 1,
+          "sizeX": 12,
+          "sizeY": 12,
+          "title": "",
+          "chart": {
+            "dynamic-parameters": [
+              "datepicker"
+            ],
+            "component": "jvectormap",
+            "options": {
+              "map": "fr_regions_mill"
+            },
+            "request": {
+              "data": {
+                "fields": {
+                  "qte": [
+                    "sum"
+                  ],
+                  "ca": [
+                    "sum"
+                  ]
+                }
+              },
+              "scale": {
+                "fields": [
+                  "ville"
+                ]
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "type": "panel",
+      "col": 8,
+      "row": 5,
+      "sizeX": 4,
+      "sizeY": 15,
+      "title": "",
+      "items": [
+        {
+          "type": "html",
+          "col": 0,
+          "row": 0,
+          "sizeX": 12,
+          "sizeY": 1,
+          "content": "<h6 class='no-margin'>Revenue</h6>"
+        },
+        {
+          "type": "chart",
+          "col": 0,
+          "row": 1,
+          "sizeX": 12,
+          "sizeY": 12,
+          "title": "",
+          "chart": {
+            "dynamic-parameters": [
+              "datepicker"
+            ],
+            "component": "morris.donut",
+            "request": {
+              "data": {
+                "fields": {
+                  "qte": [
+                    "sum"
+                  ]
+                }
+              },
+              "filter": {
+                "month": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6
+                ]
+              },
+              "scale": {
+                "fields": [
+                  "siege_social"
+                ],
+                "axis": {
+                  "x": [
+                    "siege_social"
+                  ],
+                  "y": []
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

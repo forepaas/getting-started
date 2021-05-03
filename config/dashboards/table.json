@@ -1,0 +1,79 @@
+{
+  "name": "Table",
+  "aside": {
+    "left": [],
+    "right": []
+  },
+  "width": 12,
+  "height": 12,
+  "description": "",
+  "margin": [
+    0,
+    0
+  ],
+  "items": [
+    {
+      "type": "chart",
+      "col": 0,
+      "row": 0,
+      "sizeX": 12,
+      "sizeY": 20,
+      "title": "",
+      "chart": {
+        "dynamic-parameters": ["datepicker"],
+        "component": "table",
+        "options":{
+          "i18n":{
+            "fr":{
+              "sum":"",
+              "qte":"",
+              "evol-year-2":"(Y-2)"
+            }
+          },
+          "searchable":true,
+          "theme":"standard",
+          "headerHeight":40,
+          "rowHeight": 40,
+          "padding":5,
+          "columns":[
+            {
+              "type": "scale",
+              "scale": "date",
+              "align": "right",
+              "sortable": false
+            },
+            {
+              "type": "data",
+              "data": "qte",
+              "computeMode": "sum",
+              "evol": 0
+            }
+          ]
+        },
+        "request": {
+          "data": {
+            "fields": {
+              "qte": [
+                "sum"
+              ]
+            }
+          },
+          "scale": {
+            "fields": [
+              "siege_social",
+              "date"
+            ],
+            "axis": {
+              "x": [
+                "siege_social"
+              ],
+              "y": [
+                "date"
+              ]
+            }
+          }
+        }
+      }
+    }
+  ]
+}
