@@ -14,61 +14,80 @@
   },
   "modules": {
     "recharts": {
-      "version": "1.1.0"
+      "version": "1.1.0",
+      "language": "react"
     },
     "animation": {
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "language": "react"
     },
     "api": {
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "language": "react"
     },
     "chart": {
-      "version": "2.0.0"
+      "version": "2.0.0",
+      "language": "react"
     },
     "client-authority-manager": {
-      "version": "1.0.1"
+      "version": "1.0.1",
+      "language": "react"
     },
     "dashboarding": {
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "language": "react"
     },
     "dynamic-parameter": {
-      "version": "1.1.0"
+      "version": "1.1.0",
+      "language": "react"
     },
     "dynamic-parameter-datepicker": {
-      "version": "2.0.0"
+      "version": "2.0.0",
+      "language": "react"
     },
     "dynamic-parameter-selectbox": {
-      "version": "2.0.0"
+      "version": "2.0.0",
+      "language": "react"
     },
     "formatter": {
-      "version": "1.2.0"
+      "version": "1.2.0",
+      "language": "react"
     },
     "core-ui": {
-      "version": "3.1.0"
+      "version": "3.1.0",
+      "language": "react"
     },
     "menu": {
-      "version": "3.0.0"
+      "version": "3.0.0",
+      "language": "react"
     },
     "query-builder": {
-      "version": "2.0.0"
+      "version": "2.0.0",
+      "language": "react"
     },
     "sdk": {
-      "version": "1.2.1"
+      "version": "1.2.1",
+      "language": "react"
     },
     "store": {
-      "version": "1.0.1"
+      "version": "1.0.1",
+      "language": "react"
     },
     "toaster": {
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "language": "react"
     },
     "translate": {
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "language": "react"
     },
     "xhr": {
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "language": "react"
     },
     "chart-table": {
-      "version": "2.1.0"
+      "version": "2.1.0",
+      "language": "react"
     }
   }
 }
