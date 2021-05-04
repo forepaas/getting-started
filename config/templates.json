@@ -139,82 +139,89 @@
   "recharts.line": {
     "extends": "recharts"
   },
-  "morris": {
-    "barColors": [
-      "#5eb5ef",
-      "#ff829d",
-      "#ffd778",
-      "#acf5fe",
-      "#cae59b",
-      "#f79490",
-      "#ecedf1"
-    ],
-    "lineColors": [
-      "#5eb5ef",
-      "#ff829d",
-      "#ffd778",
-      "#acf5fe",
-      "#cae59b",
-      "#f79490",
-      "#ecedf1"
-    ],
-    "colors": [
-      "#5eb5ef",
-      "#ff829d",
-      "#ffd778",
-      "#acf5fe",
-      "#cae59b",
-      "#f79490",
-      "#ecedf1"
-    ]
+  "morris.donut": {
+    "options": {
+      "barColors": [
+        "#5eb5ef",
+        "#ff829d",
+        "#ffd778",
+        "#acf5fe",
+        "#cae59b",
+        "#f79490",
+        "#ecedf1"
+      ],
+      "lineColors": [
+        "#5eb5ef",
+        "#ff829d",
+        "#ffd778",
+        "#acf5fe",
+        "#cae59b",
+        "#f79490",
+        "#ecedf1"
+      ],
+      "colors": [
+        "#5eb5ef",
+        "#ff829d",
+        "#ffd778",
+        "#acf5fe",
+        "#cae59b",
+        "#f79490",
+        "#ecedf1"
+      ]
+    }
   },
-  "loader": "material",
   "echarts": {
-    "color": [
-      "#5eb5ef",
-      "#ff829d",
-      "#ffd778",
-      "#acf5fe",
-      "#cae59b",
-      "#f79490",
-      "#ecedf1"
-    ]
+    "options": {
+      "color": [
+        "#5eb5ef",
+        "#ff829d",
+        "#ffd778",
+        "#acf5fe",
+        "#cae59b",
+        "#f79490",
+        "#ecedf1"
+      ]
+    }
   },
   "chartjs": {
-    "colors": [
-      "#5eb5ef",
-      "#ff829d",
-      "#ffd778",
-      "#acf5fe",
-      "#cae59b",
-      "#f79490",
-      "#ecedf1"
-    ]
+    "options": {
+      "colors": [
+        "#5eb5ef",
+        "#ff829d",
+        "#ffd778",
+        "#acf5fe",
+        "#cae59b",
+        "#f79490",
+        "#ecedf1"
+      ]
+    }
   },
   "jvectormap": {
-    "backgroundColor": "white",
-    "markerStyle": {
-      "initial": {
-        "fill": "#888",
-        "fill-opacity": 1,
-        "stroke": "none",
-        "stroke-width": 0,
-        "stroke-opacity": 0
+    "options": {
+      "backgroundColor": "white",
+      "markerStyle": {
+        "initial": {
+          "fill": "#888",
+          "fill-opacity": 1,
+          "stroke": "none",
+          "stroke-width": 0,
+          "stroke-opacity": 0
+        },
+        "hover": {
+          "fill": "#5b6be8"
+        }
       },
-      "hover": {
-        "fill": "#5b6be8"
-      }
-    },
-    "regionStyle": {
-      "initial": {
-        "fill": "#e7e7e7",
-        "fill-opacity": 1,
-        "stroke": "#888",
-        "stroke-width": 1,
-        "stroke-opacity": 1
-      },
-      "hover": {
-        "fill": "#5b6be8"
+      "regionStyle": {
+        "initial": {
+          "fill": "#e7e7e7",
+          "fill-opacity": 1,
+          "stroke": "#888",
+          "stroke-width": 1,
+          "stroke-opacity": 1
+        },
+        "hover": {
+          "fill": "#5b6be8"
+        }
       }
     }
   }

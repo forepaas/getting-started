@@ -44,5 +44,6 @@
     "menu": {
       "margin": 0
     }
-  }
+  },
+  "loader": "material"
 }
