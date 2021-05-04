@@ -1,7 +1,7 @@
 import React from 'react'
 import jQuery from 'jquery'
 
-export default class FpMenuCollapse extends React.Component {
+export default class MenuCollapse extends React.Component {
   constructor (props) {
     super(props)
     this.toggle = this.toggle.bind(this)
@@ -29,5 +29,5 @@ export default class FpMenuCollapse extends React.Component {
   }
 }
 
-FpMenuCollapse.propTypes = {
+MenuCollapse.propTypes = {
 }

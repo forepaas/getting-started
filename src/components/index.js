@@ -4,8 +4,7 @@ import DashboardTitle from './DashboardTitle'
 import Username from './Username'
 import Toaster from './Toaster'
 import WorkInProgress from './WorkInProgress'
-import FpDashBlock from './FpDashBlock'
-import FpMenuCollapse from './FpMenuCollapse'
+import MenuCollapse from './MenuCollapse'
 
 export default {
   components: {
@@ -13,8 +12,7 @@ export default {
     Username,
     Toaster,
     WorkInProgress,
-    FpDashBlock,
-    FpMenuCollapse
+    MenuCollapse
   },
   camelCaseToDash (myStr) {
     return myStr.replace(/([a-z])([A-Z])/g, '$1-$2').toLowerCase()
