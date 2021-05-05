@@ -4,13 +4,15 @@ import DashboardTitle from './DashboardTitle'
 import Username from './Username'
 import Toaster from './Toaster'
 import WorkInProgress from './WorkInProgress'
+import ChartTable from './ChartTable'
 
 export default {
   components: {
     DashboardTitle,
     Username,
     Toaster,
-    WorkInProgress
+    WorkInProgress,
+    ChartTable
   },
   camelCaseToDash (myStr) {
     return myStr.replace(/([a-z])([A-Z])/g, '$1-$2').toLowerCase()

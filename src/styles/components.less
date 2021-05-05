@@ -1,0 +1,282 @@
+.fp-tabs {
+  height:100%;
+  position: relative;
+
+  overflow: hidden;
+  border-radius: 4px;
+  .fp-tabs-content {
+    position:absolute;
+    top: px;
+    background:@white;
+    border-radius: 0 0 4px 4px;
+    top:55px;
+    left: 15px;
+    right: 15px;
+    bottom: 15px;
+  }
+  .fp-tabs-heads {
+    margin:15px;
+    border-bottom:1px solid #ddd;
+    border-radius: 4px 4px 0 0;
+    height: 40px;
+    padding: 0;
+    background:@white;
+    .fp-tabs-head {
+      display: inline-block;
+      list-style: none;
+      cursor: pointer;
+      height: 40px;
+      color:@primary-color-third;
+      line-height: 40px;
+      padding: 0 20px;
+      border: 1px solid @light-color;
+      border-bottom: 1px solid #ddd;
+      border-radius: 3px 3px 0 0;
+      &:hover {
+        border: 1px solid #eee;
+      }
+      &.active {
+        border: 1px solid #ddd;
+        color:#333;
+        border-bottom: 1px solid @light-color;
+      }
+      &.disabled {
+        cursor:not-allowed;
+        color:#aaa;
+      }
+    }
+  }
+}
+
+
+/* Material style */
+button {
+  cursor: pointer;
+  padding: 15px 40px;
+  font-size: 22px;
+  position: relative;
+  overflow: hidden;
+  &:after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 5px;
+    height: 5px;
+    background: rgba(255, 255, 255, .5);
+    opacity: 0;
+    border-radius: 100%;
+    transform: scale(1, 1) translate(-50%);
+    transform-origin: 50% 50%;
+  }
+  &:focus:not(:active)::after {
+    animation: ripple 1s ease-out;
+  }
+}
+
+@keyframes ripple {
+  0% {
+    transform: scale(0, 0);
+    opacity: 1;
+  }
+  20% {
+    transform: scale(25, 25);
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: scale(40, 40);
+  }
+}
+
+
+/* ==============
+  Buttons
+===================*/
+.btn {
+  border-radius: 3px;
+  font-size: 15px;
+  height:36px;
+  padding:6px 12px;
+  cursor: pointer;
+  outline:none;
+}
+
+.btn-round {
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  padding-top: 8px;
+}
+
+.btn-primary, .btn-success, .btn-info, .btn-warning,
+.btn-danger, .btn-dark {
+  color: @white;
+}
+
+.btn-secondary {
+  border-color: rgba(45, 59, 72, 0.2);
+}
+
+.btn-secondary:hover, .btn-secondary:focus, .btn-secondary:active, .btn-secondary.active,
+.btn-secondary.focus, .btn-secondary:active, .btn-secondary:focus, .btn-secondary:hover,
+.open > .dropdown-toggle.btn-secondary, .btn-secondary.active, .btn-secondary:active,
+.show > .btn-secondary.dropdown-toggle {
+  border: 1px solid rgba(45, 59, 72, 0.2);
+}
+
+.btn-primary {
+  background-color: @primary-color;
+  border: 1px solid @primary-color;
+}
+
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active,
+.btn-primary.focus, .btn-primary:active, .btn-primary:focus, .btn-primary:hover,
+.open > .dropdown-toggle.btn-primary, .btn-outline-primary.active, .btn-outline-primary:active,
+.show > .btn-outline-primary.dropdown-toggle, .btn-outline-primary:hover, .btn-primary.active,
+.btn-primary:active, .show > .btn-primary.dropdown-toggle {
+  background-color: @primary-color-bis;
+  border: 1px solid @primary-color-bis;
+}
+
+.btn-success {
+  background-color: @success-color;
+  border: 1px solid @success-color;
+}
+
+.btn-success:hover, .btn-success:focus, .btn-success:active, .btn-success.active,
+.btn-success.focus, .btn-success:active, .btn-success:focus, .btn-success:hover,
+.open > .dropdown-toggle.btn-success, .btn-outline-success.active, .btn-outline-success:active,
+.show > .btn-outline-success.dropdown-toggle, .btn-outline-success:hover, .btn-success.active,
+.btn-success:active, .show > .btn-success.dropdown-toggle {
+  background-color: #359884;
+  border: 1px solid #359884;
+}
+
+.btn-info {
+  background-color: @primary-color-bis;
+  border: 1px solid @primary-color-bis;
+}
+
+.btn-info:hover, .btn-info:focus, .btn-info:active, .btn-info.active, .btn-info.focus,
+.btn-info:active, .btn-info:focus, .btn-info:hover, .open > .dropdown-toggle.btn-info,
+.btn-outline-info.active, .btn-outline-info:active,
+.show > .btn-outline-info.dropdown-toggle, .btn-outline-info:hover, .btn-info.active, .btn-info:active,
+.show > .btn-info.dropdown-toggle {
+  background-color: @primary-color-third;
+  border: 1px solid @primary-color-third;
+}
+
+.btn-warning {
+  background-color: @warning-color;
+  border: 1px solid @warning-color;
+}
+
+.btn-warning:hover, .btn-warning:focus, .btn-warning:active, .btn-warning.active,
+.btn-warning.focus, .btn-warning:active, .btn-warning:focus, .btn-warning:hover,
+.open > .dropdown-toggle.btn-warning, .btn-outline-warning.active, .btn-outline-warning:active,
+.show > .btn-outline-warning.dropdown-toggle, .btn-outline-warning:hover, .btn-warning.active,
+.btn-warning:active, .show > .btn-warning.dropdown-toggle {
+  background-color: @warning-color-bis;
+  border: 1px solid @warning-color-bis;
+}
+
+.btn-danger {
+  background-color: @danger-color;
+  border: 1px solid @danger-color;
+}
+
+.btn-danger:active, .btn-danger:focus, .btn-danger:hover, .btn-danger.active,
+.btn-danger.focus, .btn-danger:active, .btn-danger:focus, .btn-danger:hover,
+.open > .dropdown-toggle.btn-danger, .btn-outline-danger.active, .btn-outline-danger:active,
+.show > .btn-outline-danger.dropdown-toggle, .btn-outline-danger:hover, .btn-danger.active,
+.btn-danger:active, .show > .btn-danger.dropdown-toggle {
+  background-color: @danger-color-bis;
+  border: 1px solid @danger-color-bis;
+}
+
+.btn-dark {
+  background-color: #2d3b48;
+  border: 1px solid #2d3b48;
+  color: @white;
+}
+
+.btn-dark:hover, .btn-dark:focus, .btn-dark:active, .btn-dark.active, .btn-dark.focus,
+.btn-dark:active, .btn-dark:focus, .btn-dark:hover, .open > .dropdown-toggle.btn-dark,
+.btn-outline-dark.active, .btn-outline-dark:active,
+.show > .btn-outline-dark.dropdown-toggle, .btn-outline-dark:hover {
+  background-color: #232e38;
+  border: 1px solid #232e38;
+  color: @white;
+}
+
+.btn-dark.focus, .btn-dark:focus, .btn-outline-dark.focus, .btn-outline-dark:focus {
+  -webkit-box-shadow: 0 0 0 2px rgba(45, 59, 72, 0.3);
+  box-shadow: 0 0 0 2px rgba(45, 59, 72, 0.3);
+}
+
+.btn-link {
+  color: #2d3b48;
+}
+
+.btn-link:hover {
+  color: @primary-color;
+}
+
+/* button Outline */
+.btn-outline-primary {
+  color: @primary-color;
+  border-color: @primary-color;
+}
+
+.btn-outline-success {
+  color: @success-color;
+  border-color: @success-color;
+}
+
+.btn-outline-info {
+  color: @primary-color-bis;
+  border-color: @primary-color-bis;
+}
+
+.btn-outline-warning {
+  color: @warning-color;
+  border-color: @warning-color;
+}
+
+.btn-outline-danger {
+  color: @danger-color;
+  border-color: @danger-color;
+}
+
+.btn-outline-dark {
+  color: #2d3b48;
+  background-image: none;
+  background-color: transparent;
+  border-color: #2d3b48;
+}
+
+.jqvmap-label {
+  position: absolute;
+  .jqvmap-tooltip {
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 7px;
+    font-size: 14px;
+    border-radius: 5px;
+    color: white;
+    h4 {
+      color: white;
+      text-align:center;
+      width: 100%;
+      font-size: 16px;
+    }
+    .evol {
+      &.upward {
+        color: @success-color;
+      }
+      &.downward {
+        color: @danger-color;
+      }
+    }
+  }
+}
