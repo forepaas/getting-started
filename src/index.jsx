@@ -6,6 +6,8 @@ import components from 'src/components'
 import authentication from 'src/authentication'
 import AppTemplate from 'forepaas/sdk/templates/default.jsx'
 
+import 'mdi/css/materialdesignicons.css'
+
 import 'react-toastify/dist/ReactToastify.min.css'
 import 'font-awesome/less/font-awesome.less'
 import 'src/styles/styles.less'

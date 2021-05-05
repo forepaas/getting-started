@@ -154,7 +154,7 @@
       "hoverColor": null
     }
   },
-  "morris": {
+  "morris.donut": {
     "options": {
       "barColors": [
         "#5b6be8",

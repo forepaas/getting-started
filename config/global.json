@@ -1,6 +1,6 @@
 {
-  "authentication": "{{ENV.CAM_URL}}",
-  "api": "{{ENV.API_URL}}",
+  "authentication": "{{ENV.CAM_URL || 'https://dev.forepaas.io/cam?app_id=608aae2efc05c91b000000a4'}}",
+  "api": "{{ENV.API_URL || 'https://dev.forepaas.io/node-api'}}",
   "application_name": "{{ENV.APP_NAME || 'ForePaaS'}}",
   "debug": "{{ENV.DEBUG}}",
   "loader": "spinner",
