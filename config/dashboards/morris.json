@@ -1,0 +1,235 @@
+{
+  "name": "Morris",
+  "aside": {
+    "left": [],
+    "right": []
+  },
+  "width": 12,
+  "height": 12,
+  "description": "",
+  "margin": [
+    0,
+    0
+  ],
+  "items": [
+    {
+      "type": "panel",
+      "col": 0,
+      "row": 0,
+      "sizeX": 6,
+      "sizeY": 14,
+      "title": "",
+      "items": [
+        {
+          "type": "html",
+          "col": 0,
+          "row": 0,
+          "sizeX": 12,
+          "sizeY": 1,
+          "content": "<h6 class='no-margin'>Donut</h6>"
+        },
+        {
+          "type": "chart",
+          "col": 0,
+          "row": 1,
+          "sizeX": 12,
+          "sizeY": 11,
+          "chart": {
+            "dynamic-parameters": [
+              "datepicker",
+              "siege_social"
+            ],
+            "component": "morris.donut",
+            "request": {
+              "data": {
+                "fields": {
+                  "qte": [
+                    "sum"
+                  ]
+                }
+              },
+              "filter": {},
+              "scale": {
+                "fields": [
+                  "siege_social"
+                ],
+                "axis": {
+                  "x": [
+                    "siege_social"
+                  ],
+                  "y": []
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "type": "panel",
+      "col": 6,
+      "row": 0,
+      "sizeX": 6,
+      "sizeY": 14,
+      "title": "",
+      "items": [
+        {
+          "type": "html",
+          "col": 0,
+          "row": 0,
+          "sizeX": 12,
+          "sizeY": 1,
+          "content": "<h6 class='no-margin'>Area</h6>"
+        },
+        {
+          "type": "chart",
+          "col": 0,
+          "row": 1,
+          "sizeX": 12,
+          "sizeY": 11,
+          "chart": {
+            "dynamic-parameters": [
+              "datepicker",
+              "siege_social"
+            ],
+            "component": "morris.area",
+            "request": {
+              "data": {
+                "fields": {
+                  "qte": [
+                    "sum"
+                  ]
+                }
+              },
+              "scale": {
+                "fields": [
+                  "month",
+                  "year"
+                ],
+                "axis": {
+                  "x": [
+                    "month",
+                    "year"
+                  ],
+                  "y": []
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "type": "panel",
+      "col": 0,
+      "row": 14,
+      "sizeX": 6,
+      "sizeY": 14,
+      "title": "",
+      "items": [
+        {
+          "type": "html",
+          "col": 0,
+          "row": 0,
+          "sizeX": 12,
+          "sizeY": 1,
+          "content": "<h6 class='no-margin'>Column</h6>"
+        },
+        {
+          "type": "chart",
+          "col": 0,
+          "row": 1,
+          "sizeX": 12,
+          "sizeY": 11,
+          "chart": {
+            "dynamic-parameters": [
+              "datepicker",
+              "siege_social"
+            ],
+            "component": "morris.bar",
+            "request": {
+              "data": {
+                "fields": {
+                  "qte": [
+                    "sum"
+                  ]
+                }
+              },
+              "evol": {
+                "scale": "month"
+              },
+              "scale": {
+                "fields": [
+                  "siege_social"
+                ],
+                "axis": {
+                  "x": [
+                    "siege_social"
+                  ],
+                  "y": []
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "type": "panel",
+      "col": 6,
+      "row": 14,
+      "sizeX": 6,
+      "sizeY": 14,
+      "title": "",
+      "items": [
+        {
+          "type": "html",
+          "col": 0,
+          "row": 0,
+          "sizeX": 12,
+          "sizeY": 1,
+          "content": "<h6 class='no-margin'>Line</h6>"
+        },
+        {
+          "type": "chart",
+          "col": 0,
+          "row": 1,
+          "sizeX": 12,
+          "sizeY": 11,
+          "chart": {
+            "dynamic-parameters": [
+              "datepicker",
+              "siege_social"
+            ],
+            "component": "morris.line",
+            "request": {
+              "data": {
+                "fields": {
+                  "qte": [
+                    "sum"
+                  ]
+                }
+              },
+              "evol": {
+                "scale": "month"
+              },
+              "scale": {
+                "fields": [
+                  "month",
+                  "year"
+                ],
+                "axis": {
+                  "x": [
+                    "month",
+                    "year"
+                  ],
+                  "y": []
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
