@@ -4,16 +4,17 @@
   font-weight: bold;
 
   .datepicker-close {
-    background    : #fff;
-    cursor        : pointer;
-    border        : 1px solid #ccc;
-    box-shadow    : none !important;
-    border-radius : 5px;
-    height        : 36px;
-    font-size     : 13px;
-    color         : #333F50;
-    padding       : 0 11px;
-    letter-spacing: -0.5px;
+    cursor: pointer;
+    background: rgba(255,255,255,0.3);
+    color:white;
+    height: 36px;
+    padding: 6px 20px;
+    font-weight: normal;
+    line-height: 22px;
+    font-size:13px;
+    margin: 17px;
+    border-radius: 17px;
+    border: 1px solid @header-background;
 
     .datepicker-close-separator {
       width       : 15px;
@@ -96,5 +97,61 @@
 
 .selectbox__control.css-1goq2uo-control:hover {
   cursor: pointer;
+}
 
+.selectbox {
+  margin: 17px;
+  .Select-control {
+    border: 1px solid @header-background!important;
+    background: rgba(255,255,255,0.3)!important;
+    border-radius: 17px!important;
+    cursor: pointer;
+  }
+  .Select-value {
+    cursor: pointer;
+    border-color:@light-color;
+    padding-left: 15px!important;
+    span {
+      border-right:0;
+    }
+  }
+  .Select-multi-value-wrapper {
+    padding:0 10px!important;
+
+    .Select-value {
+      padding-left: 5px!important;
+    }
+  }
+  .Select-clear,.Select-placeholder,.Select-value span {
+    color:@white!important;
+  }
+  .Select-value-icon {
+    line-height: 5px;
+  }
+  .Select-placeholder {
+    padding-left: 15px!important;
+  }
+  .Select-input,.Select-input:focus {
+    margin-left:0;
+    padding-left: 5px!important;
+    background:transparent!important;
+    input {
+      color:@white!important;
+    }
+  }
+  .Select-arrow-zone span {
+    border-color:@white transparent transparent!important;
+  }
+  .Select-menu-outer {
+    margin-top: 3px;
+  }
+}
+
+.Select-menu-outer {
+  z-index: 100;
+  .Select-option {
+    &.is-focused,&:hover,&.is-selected {
+      background:#f8f9fa!important;
+    }
+  }
 }
