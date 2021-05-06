@@ -138,5 +138,86 @@
   },
   "recharts.line": {
     "extends": "recharts"
+  },
+  "jqvmap": {
+    "options": {
+      "backgroundColor": "white",
+      "scaleColors": [
+        "#5A68E4",
+        "#6a77e6",
+        "#7984E6",
+        "#8A94E9",
+        "#9CA3EB",
+        "#ACB2EF",
+        "#BDC2F2"
+      ],
+      "hoverColor": null
+    }
+  },
+  "morris": {
+    "options": {
+      "barColors": [
+        "#5b6be8",
+        "#40a4f1",
+        "#f5b225",
+        "#2d3b48",
+        "#3cab94",
+        "#ec536c",
+        "#eff3f6"
+      ],
+      "lineColors": [
+        "#5b6be8",
+        "#40a4f1",
+        "#f5b225",
+        "#2d3b48",
+        "#3cab94",
+        "#ec536c",
+        "#eff3f6"
+      ],
+      "colors": [
+        "#5b6be8",
+        "#40a4f1",
+        "#f5b225",
+        "#2d3b48",
+        "#3cab94",
+        "#ec536c",
+        "#eff3f6"
+      ]
+    }
+  },
+  "echarts": {
+    "options": {
+      "color": [
+        "#5b6be8",
+        "#40a4f1",
+        "#f5b225",
+        "#2d3b48",
+        "#3cab94",
+        "#ec536c",
+        "#eff3f6"
+      ]
+    }
+  },
+  "table": {
+    "options": {
+      "rowHeight": 50,
+      "headerHeight": 48,
+      "search": {
+        "icon": "fa fa-search"
+      }
+    }
+  },
+  "chartjs": {
+    "options": {
+      "colors": [
+        "#5b6be8",
+        "#40a4f1",
+        "#f5b225",
+        "#2d3b48",
+        "#3cab94",
+        "#ec536c",
+        "#eff3f6"
+      ]
+    }
   }
 }

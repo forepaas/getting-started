@@ -1,0 +1,106 @@
+{
+  "name": "Tabs",
+  "aside": {
+    "left": [],
+    "right": []
+  },
+  "width": 12,
+  "height": 12,
+  "description": "",
+  "margin": [
+    0,
+    0
+  ],
+  "items": [
+    {
+      "type": "tabs",
+      "col": 0,
+      "row": 0,
+      "sizeX": 12,
+      "sizeY": 14,
+      "title": "",
+      "items": [
+        {
+          "type": "chart",
+          "col": 0,
+          "row": 0,
+          "sizeX": 12,
+          "sizeY": 9,
+          "title": "Donut Chart",
+          "chart": {
+            "dynamic-parameters": [
+              "datepicker",
+              "siege_social"
+            ],
+            "component": "chartist.donut",
+            "request": {
+              "data": {
+                "fields": {
+                  "qte": [
+                    "sum"
+                  ]
+                }
+              },
+              "filter": {
+                "month": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6
+                ]
+              },
+              "scale": {
+                "fields": [
+                  "month"
+                ],
+                "axis": {
+                  "x": [
+                    "month"
+                  ],
+                  "y": []
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "chart",
+          "col": 0,
+          "row": 0,
+          "sizeX": 12,
+          "sizeY": 9,
+          "title": "Table Chart",
+          "chart": {
+            "dynamic-parameters": [
+              "datepicker",
+              "siege_social"
+            ],
+            "component": "table",
+            "request": {
+              "data": {
+                "fields": {
+                  "qte": [
+                    "sum"
+                  ]
+                }
+              },
+              "scale": {
+                "fields": [
+                  "month"
+                ],
+                "axis": {
+                  "x": [
+                    "month"
+                  ],
+                  "y": []
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

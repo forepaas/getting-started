@@ -1,0 +1,283 @@
+{
+  "name": "Dashboard",
+  "aside": {
+    "left": [],
+    "right": []
+  },
+  "width": 12,
+  "height": 12,
+  "description": "",
+  "margin": [
+    0,
+    0
+  ],
+  "items": [
+    {
+      "type": "html",
+      "col": 0,
+      "row": 0,
+      "sizeX": 6,
+      "sizeY": 1,
+      "content": "<h4 class='no-margin'>&nbsp;&nbsp;Dashboard</h4>"
+    },
+    {
+      "type": "html",
+      "col": 6,
+      "row": 0,
+      "sizeX": 6,
+      "sizeY": 1,
+      "content": [
+        "<ul class='ariane'>",
+        "<li>MyApp</li>",
+        "<li>/</li>",
+        "<li><a href='#/dashboard'>Dashboard</a></li>",
+        "</ul>"
+      ]
+    },
+    {
+      "type": "chart",
+      "col": 0,
+      "row": 1,
+      "sizeX": 3,
+      "sizeY": 5,
+      "title": "",
+      "chart": {
+        "dynamic-parameters": [
+          "datepicker",
+          "siege_social"
+        ],
+        "component": "html",
+        "request": {
+          "data": {
+            "fields": {
+              "qte": [
+                "sum"
+              ]
+            }
+          },
+          "evol": {
+            "scale": "month"
+          }
+        },
+        "options": {
+          "template-name": "evol",
+          "icon": "mdi mdi-webcam",
+          "text": "Visits Today"
+        }
+      }
+    },
+    {
+      "type": "chart",
+      "col": 3,
+      "row": 1,
+      "sizeX": 3,
+      "sizeY": 5,
+      "title": "",
+      "chart": {
+        "dynamic-parameters": [
+          "datepicker",
+          "siege_social"
+        ],
+        "component": "html",
+        "request": {
+          "data": {
+            "fields": {
+              "qte": [
+                "sum"
+              ]
+            }
+          },
+          "evol": {
+            "scale": "month"
+          }
+        },
+        "options": {
+          "template-name": "evol",
+          "icon": "mdi mdi-webcam",
+          "text": "New Users"
+        }
+      }
+    },
+    {
+      "type": "chart",
+      "col": 6,
+      "row": 1,
+      "sizeX": 3,
+      "sizeY": 5,
+      "title": "",
+      "chart": {
+        "dynamic-parameters": [
+          "datepicker",
+          "siege_social"
+        ],
+        "component": "html",
+        "request": {
+          "data": {
+            "fields": {
+              "qte": [
+                "sum"
+              ]
+            }
+          },
+          "evol": {
+            "scale": "month"
+          }
+        },
+        "options": {
+          "template-name": "evol",
+          "icon": "mdi mdi-webcam",
+          "text": "News Orders"
+        }
+      }
+    },
+    {
+      "type": "chart",
+      "col": 9,
+      "row": 1,
+      "sizeX": 3,
+      "sizeY": 5,
+      "title": "",
+      "chart": {
+        "dynamic-parameters": [
+          "datepicker",
+          "siege_social"
+        ],
+        "component": "html",
+        "request": {
+          "data": {
+            "fields": {
+              "qte": [
+                "sum"
+              ]
+            }
+          },
+          "evol": {
+            "scale": "month"
+          }
+        },
+        "options": {
+          "template-name": "evol",
+          "icon": "mdi mdi-webcam",
+          "text": "Total sales"
+        }
+      }
+    },
+    {
+      "type": "panel",
+      "col": 0,
+      "row": 6,
+      "sizeX": 8,
+      "sizeY": 20,
+      "title": "",
+      "items": [
+        {
+          "type": "html",
+          "col": 0,
+          "row": 0,
+          "sizeX": 12,
+          "sizeY": 1,
+          "content": "<h6 class='no-margin'>Overview</h6>"
+        },
+        {
+          "type": "chart",
+          "col": 0,
+          "row": 1,
+          "sizeX": 12,
+          "sizeY": 17,
+          "title": "",
+          "chart": {
+            "dynamic-parameters": [
+              "datepicker",
+              "siege_social"
+            ],
+            "component": "jqvmap",
+            "options": {
+              "map": "france"
+            },
+            "request": {
+              "filter": {},
+              "scale": {
+                "fields": [
+                  "departments"
+                ]
+              },
+              "data": {
+                "fields": {
+                  "ca": [
+                    "sum"
+                  ]
+                }
+              },
+              "evol": {
+                "scale": "year"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "type": "panel",
+      "col": 8,
+      "row": 6,
+      "sizeX": 4,
+      "sizeY": 20,
+      "title": "",
+      "items": [
+        {
+          "type": "html",
+          "col": 0,
+          "row": 0,
+          "sizeX": 12,
+          "sizeY": 1,
+          "content": "<h6 class='no-margin'>Revenue by siege social</h6>"
+        },
+        {
+          "type": "chart",
+          "col": -0.046142578125,
+          "row": 1,
+          "sizeX": 12,
+          "sizeY": 17,
+          "title": "",
+          "chart": {
+            "dynamic-parameters": [
+              "datepicker",
+              "siege_social"
+            ],
+            "component": "morris.donut",
+            "request": {
+              "data": {
+                "fields": {
+                  "qte": [
+                    "sum"
+                  ]
+                }
+              },
+              "filter": {
+                "month": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6
+                ]
+              },
+              "scale": {
+                "fields": [
+                  "siege_social"
+                ],
+                "axis": {
+                  "x": [
+                    "siege_social"
+                  ],
+                  "y": []
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
