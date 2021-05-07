@@ -1,0 +1,702 @@
+@import './_variables.less';
+.dash-block {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  .content {
+    position: absolute;
+    left: 15px;
+    top: 15px;
+    bottom: 15px;
+    right: 15px;
+    border-radius: 5px;
+    box-shadow: 0 0 30px 1px rgba(0, 0, 0, .1);
+    background: @white;
+    > i {
+      position: absolute;
+      top: 25px;
+      left: 30px;
+      color: @white;
+      font-size: 45px;
+    }
+    .value {
+      color: #2f3c4b;
+      font-size: 20px;
+      font-weight: 400;
+      margin-top: 20px;
+      margin-bottom: 5px;
+      margin-left: 100px;
+    }
+    .evol {
+      position: absolute;
+      left: 13%;
+      bottom: 40px;
+      font-weight: 400;
+      font-size: 30px;
+      &.negative {
+        i {
+          color: @danger-color;
+        }
+      }
+      &.positive {
+        i {
+          color: @success-color;
+        }
+      }
+      i {
+        position: absolute;
+        left: -20px;
+        top: 5;
+        font-size: 25px;
+      }
+    }
+    .text {
+      text-transform: uppercase;
+      font-size: 12px;
+      font-weight: 400;
+      color: #949494;
+      margin-left: 100px;
+    }
+    .graph {
+      position: absolute;
+      bottom: 30px;
+      left: 65%;
+      height: 30%;
+      right: 15px;
+    }
+  }
+}
+
+.jvectormap-container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  touch-action: none;
+}
+
+.jvectormap-tip {
+  position: absolute;
+  display: none;
+  border: solid 1px #CDCDCD;
+  border-radius: 3px;
+  background: #292929;
+  color: white;
+  font-family: sans-serif, Verdana;
+  font-size: smaller;
+  padding: 3px;
+}
+
+.jvectormap-zoomin, .jvectormap-zoomout, .jvectormap-goback {
+  position: absolute;
+  left: 12px;
+  border-radius: 3px;
+  background: #292929;
+  padding: 3px;
+  color: white;
+  cursor: pointer;
+  line-height: 10px;
+  text-align: center;
+  box-sizing: content-box;
+}
+
+.jvectormap-zoomin, .jvectormap-zoomout {
+  width: 10px;
+  height: 10px;
+}
+
+.jvectormap-zoomin {
+  top: 10px;
+}
+
+.jvectormap-zoomout {
+  top: 30px;
+}
+
+.jvectormap-goback {
+  bottom: 10px;
+  z-index: 1000;
+  padding: 6px;
+}
+
+.jvectormap-spinner {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background: center no-repeat url(data:image/gif;base64,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);
+}
+
+.jvectormap-legend-title {
+  font-weight: bold;
+  font-size: 14px;
+  text-align: center;
+}
+
+.jvectormap-legend-cnt {
+  position: absolute;
+}
+
+.jvectormap-legend-cnt-h {
+  bottom: 0;
+  right: 0;
+}
+
+.jvectormap-legend-cnt-v {
+  top: 0;
+  right: 0;
+}
+
+.jvectormap-legend {
+  background: black;
+  color: white;
+  border-radius: 3px;
+}
+
+.jvectormap-legend-cnt-h .jvectormap-legend {
+  float: left;
+  margin: 0 10px 10px 0;
+  padding: 3px 3px 1px 3px;
+}
+
+.jvectormap-legend-cnt-h .jvectormap-legend .jvectormap-legend-tick {
+  float: left;
+}
+
+.jvectormap-legend-cnt-v .jvectormap-legend {
+  margin: 10px 10px 0 0;
+  padding: 3px;
+}
+
+.jvectormap-legend-cnt-h .jvectormap-legend-tick {
+  width: 40px;
+}
+
+.jvectormap-legend-cnt-h .jvectormap-legend-tick-sample {
+  height: 15px;
+}
+
+.jvectormap-legend-cnt-v .jvectormap-legend-tick-sample {
+  height: 20px;
+  width: 20px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.jvectormap-legend-tick-text {
+  font-size: 12px;
+}
+
+.jvectormap-legend-cnt-h .jvectormap-legend-tick-text {
+  text-align: center;
+}
+
+.jvectormap-legend-cnt-v .jvectormap-legend-tick-text {
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 20px;
+  padding-left: 3px;
+}
+
+
+/**
+ * FixedDataTable v0.8.10 
+ *
+ * Copyright Schrodinger, LLC
+ * All rights reserved.
+ *
+ * This source code is licensed under the BSD-style license found in the
+ * LICENSE file in the root directory of this source tree. An additional grant
+ * of patent rights can be found in the PATENTS file in the same directory.
+ */
+
+
+/**
+ * Copyright Schrodinger, LLC
+ * All rights reserved.
+ *
+ * This source code is licensed under the BSD-style license found in the
+ * LICENSE file in the root directory of this source tree. An additional grant
+ * of patent rights can be found in the PATENTS file in the same directory.
+ *
+ * @providesModule fixedDataTable
+ *
+ */
+
+.fp-chart-table {
+  color: @graph-table-text-color;
+}
+
+.fp-chart-table-search {
+  height: 50px;
+  width: 50%;
+  margin-bottom: 30px;
+  position: relative;
+  background: transparent;
+  .search-bar-content {
+    height: 100%;
+    input {
+      background: @graph-table-search-background;
+      border: 1px solid @graph-table-search-border-color;
+      border-radius: 4px;
+      line-height: 50px;
+      vertical-align: bottom;
+      outline: none;
+      padding: 0 10px 0 50px;
+      width: 100%;
+      height: 100%;
+      display: inline-block;
+      color: @graph-table-header-text-color;
+      font-size: 14px;
+      &:focus {
+        border-color: @primary-color;
+      }
+    }
+    i {
+      position: absolute;
+      vertical-align: bottom;
+      width: 32px;
+      height: 32px;
+      color: #888;
+      text-align: center;
+      left: 10px;
+      line-height: 50px;
+    } 
+  }
+}
+
+
+/**
+ * Table.
+ */
+
+.public_fixedDataTable_main {
+  border-color: @graph-table-external-border-color;
+  outline: none;
+}
+
+.public_fixedDataTable_header {
+  color: @graph-table-header-text-color;
+}
+
+.public_fixedDataTable_header, .public_fixedDataTable_hasBottomBorder {
+  border-color: @graph-table-external-border-color;
+}
+
+.public_fixedDataTable_header .public_fixedDataTableCell_main {
+  font-weight: bold;
+  .sort-icon {
+    color: #ddd;
+    &.active {
+      color: #333;
+    }
+  }
+  .fp-chart-table-hcell {
+    width: 100%;
+    a {
+      display: block;
+      line-height: 32px;
+      font-size: 15px;
+      font-weight: 500;
+    }
+  }
+  cursor:pointer;
+  .column-head {
+    display: inline;
+  }
+}
+
+.public_fixedDataTable_scrollbarSpacer {
+  position: absolute;
+  z-index: 99;
+}
+
+.public_fixedDataTableCell_main {
+  border-bottom: 1px solid @graph-table-odd-background;
+}
+
+.public_fixedDataTable_header .public_fixedDataTableCell_main {
+  background-color: @graph-table-header-background;
+  border-color: @graph-table-cell-border-color;
+}
+
+.public_fixedDataTable_footer .public_fixedDataTableCell_main {
+  background-color: @graph-table-odd-background;
+  border-color: @graph-table-cell-border-color;
+}
+
+.public_fixedDataTable_horizontalScrollbar .public_Scrollbar_mainHorizontal {
+  background-color: @graph-table-odd-background;
+}
+
+
+/**
+ * Copyright Schrodinger, LLC
+ * All rights reserved.
+ *
+ * This source code is licensed under the BSD-style license found in the
+ * LICENSE file in the root directory of this source tree. An additional grant
+ * of patent rights can be found in the PATENTS file in the same directory.
+ *
+ * @providesModule fixedDataTableCell
+ */
+
+
+/**
+ * Table cell.
+ */
+
+.public_fixedDataTableCell_main {
+  background-color: rgba(0, 0, 0, .02);
+  border-color: @graph-table-cell-border-color;
+}
+
+.public_fixedDataTableCell_highlighted {
+  background-color: #f4f4f4;
+}
+
+.public_fixedDataTableCell_cellContent {
+  padding: 8px;
+  font-size: 15px;
+  font-weight: 400;
+}
+
+.public_fixedDataTableCell_columnResizerKnob {
+  background-color: #0284ff;
+}
+
+.public_fixedDataTableCell_hasReorderHandle .public_fixedDataTableCell_cellContent {
+  margin-left: 12px;
+}
+
+
+/**
+ * Column reorder goodies.
+ */
+
+.fixedDataTableCellLayout_columnReorderContainer {
+  border-color: #0284ff;
+  background-color: rgba(0, 0, 0, 0.1);
+  width: 12px;
+  margin-right: -12px;
+  float: left;
+  cursor: move;
+}
+
+.fixedDataTableCellLayout_columnReorderContainer:after {
+  content: '::';
+  position: absolute;
+  top: 50%;
+  left: 1px;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+
+/**
+ * Copyright Schrodinger, LLC
+ * All rights reserved.
+ *
+ * This source code is licensed under the BSD-style license found in the
+ * LICENSE file in the root directory of this source tree. An additional grant
+ * of patent rights can be found in the PATENTS file in the same directory.
+ *
+ * @providesModule fixedDataTableColumnResizerLine
+ *
+ */
+
+
+/**
+ * Column resizer line.
+ */
+
+.public_fixedDataTableColumnResizerLine_main {
+  border-color: #0284ff;
+}
+
+
+/**
+ * Copyright Schrodinger, LLC
+ * All rights reserved.
+ *
+ * This source code is licensed under the BSD-style license found in the
+ * LICENSE file in the root directory of this source tree. An additional grant
+ * of patent rights can be found in the PATENTS file in the same directory.
+ *
+ * @providesModule fixedDataTableRow
+ */
+
+
+/**
+ * Table row.
+ */
+
+.public_fixedDataTableRow_main {
+  background-color: @graph-table-odd-background;
+}
+
+.public_fixedDataTableRow_highlighted, .public_fixedDataTableRow_highlighted .public_fixedDataTableCell_main {
+  background-color: @graph-table-even-background;
+}
+
+.public_fixedDataTableRow_fixedColumnsDivider {
+  border-color: @graph-table-odd-background;
+}
+
+.public_fixedDataTableRow_columnsShadow {
+  background: 0 0 url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAABCAYAAAD5PA/NAAAAFklEQVQIHWPSkNeSBmJhTQVtbiDNCgASagIIuJX8OgAAAABJRU5ErkJggg==) repeat-y;
+}
+
+.public_fixedDataTableRow_columnsRightShadow {
+  -webkit-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+
+
+/**
+ * Copyright Schrodinger, LLC
+ * All rights reserved.
+ *
+ * This source code is licensed under the BSD-style license found in the
+ * LICENSE file in the root directory of this source tree. An additional grant
+ * of patent rights can be found in the PATENTS file in the same directory.
+ *
+ * @providesModule Scrollbar
+ *
+ */
+
+
+/**
+ * Scrollbars.
+ */
+
+
+/* Touching the scroll-track directly makes the scroll-track bolder */
+
+.public_Scrollbar_main.public_Scrollbar_mainActive, .public_Scrollbar_main {
+  background-color: @graph-table-scrollbar-background;
+  border-left: 1px solid @graph-table-scrollbar-border;
+}
+
+.public_Scrollbar_mainOpaque, .public_Scrollbar_mainOpaque.public_Scrollbar_mainActive, .public_Scrollbar_mainOpaque:hover {
+  background-color: #fff;
+}
+
+.public_Scrollbar_face:after {
+  background-color: #c2c2c2;
+}
+
+.public_Scrollbar_main:hover .public_Scrollbar_face:after, .public_Scrollbar_mainActive .public_Scrollbar_face:after, .public_Scrollbar_faceActive:after {
+  background-color: #7d7d7d;
+}
+
+.chart-html {
+  padding: 15px;
+  .block, .block-evol {
+    border-radius: 3px;
+    background-color: #272c33;
+    height: 100%;
+    position: relative;
+    padding: 15px;
+    i {
+      display: none;
+    }
+    &.yellow i {
+      background: #fab63f;
+    }
+    &.red i {
+      background: #fe413b;
+    }
+    .value {
+      font-weight: 500;
+      font-size: 24px;
+      display: block;
+      position: absolute;
+      bottom: 20%;
+      left: 0;
+      right: 0;
+      color: #7a86ff;
+    }
+    &.yellow .value {
+      color: #fab63f;
+    }
+    &.red .value {
+      color: @black;
+    }
+    .evol {
+      font-weight: 500;
+      line-height: 20px;
+      display: block;
+      position: absolute;
+      right: 15%;
+      top: 50%;
+      &.positive {
+        color: @success-color;
+        &:before {
+          content: "\F05D";
+        }
+      }
+      &.negative {
+        color: @danger-color;
+        &:before {
+          content: "\F045";
+        }
+      }
+      &.positive, &.negative {
+        &:before {
+          font: normal normal normal 24px/1 "Material Design Icons";
+          position: absolute;
+          top: -20px;
+          left: 50%;
+          transform: translateX(-50%);
+          font-size: 16px;
+        }
+      }
+    }
+    .text {
+      display: block;
+      font-weight: bold;
+      color: #707070;
+      font-size: 15px;
+      font-weight: normal;
+      position: absolute;
+      bottom: 15px;
+      left: 15px;
+    }
+  }
+  .block-evol {
+    .value {
+      position: absolute;
+      left: 15px;
+      top: 15px;
+    }
+  }
+}
+
+/* Chartist chart */
+
+.ct-golden-section:before {
+  float: none;
+}
+
+.ct-grid {
+  stroke: rgba(0, 0, 0, 0.09);
+  stroke-width: 2px;
+  stroke-dasharray: 3px;
+}
+
+.fp-chartist .ct-label {
+  fill: #707070;
+  color: #707070;
+  font-size: 14px;
+  line-height: 1;
+}
+
+.fp-chartist-semiDonu .ct-labelt, .fp-chartist-semiPie .ct-label, .fp-chartist-donut .ct-label, .fp-chartist-pie .ct-label {
+  color: #ffffff;
+  fill: #ffffff;
+  font-size: 12px;
+}
+
+.fp-chartist .ct-series.ct-series-a .ct-bar, .fp-chartist .ct-series.ct-series-a .ct-line, .fp-chartist .ct-series.ct-series-a .ct-point, .fp-chartist .ct-series.ct-series-a .ct-slice-donut, {
+  stroke: @graphColor1;
+}
+
+.fp-chartist .ct-series.ct-series-b .ct-bar, .fp-chartist .ct-series.ct-series-b .ct-line, .fp-chartist .ct-series.ct-series-b .ct-point, .fp-chartist .ct-series.ct-series-b .ct-slice-donut, {
+  stroke: @graphColor2;
+}
+
+.fp-chartist .ct-series.ct-series-c .ct-bar, .fp-chartist .ct-series.ct-series-c .ct-line, .fp-chartist .ct-series.ct-series-c .ct-point, .fp-chartist .ct-series.ct-series-c .ct-slice-donut, {
+  stroke: @graphColor3;
+}
+
+.fp-chartist .ct-series.ct-series-d .ct-bar, .fp-chartist .ct-series.ct-series-d .ct-line, .fp-chartist .ct-series.ct-series-d .ct-point, .fp-chartist .ct-series.ct-series-d .ct-slice-donut, {
+  stroke: @graphColor4;
+}
+
+.fp-chartist .ct-series.ct-series-e .ct-bar, .fp-chartist .ct-series.ct-series-e .ct-line, .fp-chartist .ct-series.ct-series-e .ct-point, .fp-chartist .ct-series.ct-series-e .ct-slice-donut, {
+  stroke: @graphColor5;
+}
+
+.fp-chartist .ct-series.ct-series-f .ct-bar, .fp-chartist .ct-series.ct-series-f .ct-line, .fp-chartist .ct-series.ct-series-f .ct-point, .fp-chartist .ct-series.ct-series-f .ct-slice-donut, {
+  stroke: @graphColor6;
+}
+
+.fp-chartist .ct-series.ct-series-g .ct-bar, .fp-chartist .ct-series.ct-series-g .ct-line, .fp-chartist .ct-series.ct-series-g .ct-point, .fp-chartist .ct-series.ct-series-g .ct-slice-donut, {
+  stroke: @graphColor7;
+}
+
+.ct-series-a .ct-area, .ct-series-a .ct-slice-pie, .ct-series-a .ct-slice-donut-solid {
+  fill: @graphColor1;
+}
+
+.ct-series-b .ct-area, .ct-series-b .ct-slice-pie, .ct-series-b .ct-slice-donut-solid {
+  fill: @graphColor2;
+}
+
+.ct-series-c .ct-area, .ct-series-c .ct-slice-pie, .ct-series-c .ct-slice-donut-solid {
+  fill: @graphColor3;
+}
+
+.ct-series-d .ct-area, .ct-series-d .ct-slice-pie, .ct-series-d .ct-slice-donut-solid {
+  fill: @graphColor4;
+}
+
+.ct-series-e .ct-area, .ct-series-e .ct-slice-pie, .ct-series-e .ct-slice-donut-solid {
+  fill: @graphColor5;
+}
+
+.ct-series-f .ct-area, .ct-series-f .ct-slice-pie, .ct-series-f .ct-slice-donut-solid {
+  fill: @graphColor6;
+}
+
+.ct-series-g .ct-area, .ct-series-g .ct-slice-pie, .ct-series-g .ct-slice-donut-solid {
+  fill: @graphColor7;
+}
+
+.fp-chartist-tooltip {
+  position: absolute;
+  display: inline-block;
+  opacity: 0;
+  min-width: 10px;
+  padding: 2px 10px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  -moz-border-radius: 3px;
+  background-clip: padding-box;
+  background: #2d3b48;
+  color: @white;
+  text-align: center;
+  pointer-events: none;
+  z-index: 1;
+  -webkit-transition: opacity .2s linear;
+  -moz-transition: opacity .2s linear;
+  -o-transition: opacity .2s linear;
+  transition: opacity .2s linear;
+}
+
+.fp-chartist-tooltip.tooltip-show {
+  opacity: 1;
+}
+
+.morris-hover {
+  padding: 10px 12px!important;
+  box-shadow: 0 5px 25px 5px rgba(0, 0, 0, 0.14);
+  border: none!important;
+  border-radius: 4px!important;
+  .morris-hover-row-label {
+    border-radius: 4px 0 0;
+    background: #2d3b48;
+    color: @white;
+    padding: 4px;
+    margin: -10px -12px 10px -12px!important;
+    font-weight: 700;
+    font-size: 12px;
+  }
+  .morris-hover-point {
+    font-size: 14px;
+    font-weight: 500;
+    color: #2d3b48!important;
+  }
+}

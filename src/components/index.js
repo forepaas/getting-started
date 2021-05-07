@@ -5,6 +5,9 @@ import Hello from './Hello'
 import Username from './Username'
 import Toaster from './Toaster'
 import WorkInProgress from './WorkInProgress'
+import ChartTable from './ChartTable'
+import ChartDashBlock from './ChartDashBlock'
+import MenuCollapse from './MenuCollapse'
 
 export default {
   components: {
@@ -12,7 +15,10 @@ export default {
     Hello,
     Username,
     Toaster,
-    WorkInProgress
+    WorkInProgress,
+    ChartTable,
+    ChartDashBlock,
+    MenuCollapse
   },
   camelCaseToDash (myStr) {
     return myStr.replace(/([a-z])([A-Z])/g, '$1-$2').toLowerCase()

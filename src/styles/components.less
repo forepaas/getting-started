@@ -1,0 +1,275 @@
+input {
+  border-radius: 3px;
+  padding: 5px 15px;
+  border: 1px solid @black;
+  transition: 0.15s ease-in;
+  &:active, &:focus {
+    -webkit-box-shadow: 0px 0px 2px 2px fadeout(@primary-color, 70%);
+    -moz-box-shadow: 0px 0px 2px 2px fadeout(@primary-color, 70%);
+    box-shadow: 0px 0px 2px 2px fadeout(@primary-color, 70%);
+  }
+}
+
+.fp-tabs {
+  height:100%;
+  position: relative;
+  
+  overflow: hidden;
+  border-radius: 4px;
+  .fp-tabs-content {
+    position:absolute;
+    padding:15px;
+    background:@white;
+    border-radius: 0 0 4px 4px;
+    top:70px;
+    left: 15px;
+    right: 15px;
+    bottom: 15px;
+  }
+  .fp-tabs-heads {
+    margin:15px;
+    border-bottom:1px solid #ddd;
+    border-radius: 4px 4px 0 0;
+    height: 55px;
+    padding: 15px 15px 0 15px;
+    background:@white;
+    .fp-tabs-head {
+      display: inline-block;
+      list-style: none;
+      color:#141414;
+      cursor: pointer;
+      height: 40px;
+      line-height: 40px;
+      padding: 0 20px;
+      border: 1px solid #fff;
+      border-bottom: 1px solid #ddd;
+      border-radius: 3px 3px 0 0;
+      font-size:14px;
+      font-weight:400;
+      &:hover {
+        border: 1px solid #eee;
+        color:#495057;
+      }
+      &.active {
+        border: 1px solid #ddd;
+        color:#495057;
+        border-bottom: 1px solid @light-color;
+      }
+    }
+  }
+}
+
+
+/* Material style */
+button {
+  cursor: pointer;
+  padding: 15px 40px;
+  font-size: 22px;
+  position: relative;
+  overflow: hidden;
+  &:after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 5px;
+    height: 5px;
+    background: rgba(255, 255, 255, .5);
+    opacity: 0;
+    border-radius: 100%;
+    transform: scale(1, 1) translate(-50%);
+    transform-origin: 50% 50%;
+  }
+}
+
+/* ==============
+  Buttons
+===================*/
+.btn {
+  border-radius: 3px;
+  font-size: 17px;
+  padding: 7px 12px;
+  cursor: pointer;
+  outline: none;
+  margin-bottom: 5px;
+  margin-right: 5px;
+}
+
+.btn-round {
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  padding-top: 8px;
+}
+
+.btn-primary, .btn-success, .btn-info, .btn-warning,
+.btn-danger, .btn-dark, .return-button {
+  color: @white;
+}
+
+.btn-secondary {
+  border-color: rgba(45, 59, 72, 0.2);
+}
+
+.btn-secondary:hover, .btn-secondary:focus, .btn-secondary:active, .btn-secondary.active,
+.btn-secondary.focus, .btn-secondary:active, .btn-secondary:focus, .btn-secondary:hover,
+.open > .dropdown-toggle.btn-secondary, .btn-secondary.active, .btn-secondary:active,
+.show > .btn-secondary.dropdown-toggle {
+  border: 1px solid rgba(45, 59, 72, 0.2);
+}
+
+.btn-primary {
+  background-color: @primary-color;
+  border: 1px solid @primary-color;
+  box-shadow: 0px 8px 10px -8px fadeout(@primary-color, 45%);
+  -webkit-transition: 0.15s ease-in;
+  transition: 0.15s ease-in;
+  &:hover {
+    background: @primary-color;
+    box-shadow: 0 8px 10px -5px fadeout(@primary-color, 30%);
+    -webkit-box-shadow: 0 8px 10px -5px fadeout(@primary-color, 30%);
+  }
+  &:focus, &:active {
+    background-color: darken(@primary-color, 5%);
+    border: 1px solid darken(@primary-color, 5%);
+    box-shadow: 0 8px 10px -5px fadeout(@primary-color, 5%);
+    -webkit-box-shadow: 0 8px 10px -5px fadeout(@primary-color, 5%);
+  }
+}
+
+.btn-danger {
+  background-color: @danger-color;
+  border: 1px solid @danger-color;
+  box-shadow: 0px 8px 10px -8px fadeout(@danger-color, 45%);
+  -webkit-transition: 0.15s ease-in;
+  transition: 0.15s ease-in;
+  &:hover {
+    background: @danger-color;
+    box-shadow: 0 8px 10px -5px fadeout(@danger-color, 30%);
+    -webkit-box-shadow: 0 8px 10px -5px fadeout(@danger-color, 30%);
+  }
+  &:focus, &:active {
+    background-color: darken(@danger-color, 5%);
+    border: 1px solid darken(@danger-color, 5%);
+    box-shadow: 0 8px 10px -5px fadeout(@danger-color, 5%);
+    -webkit-box-shadow: 0 8px 10px -5px fadeout(@danger-color, 5%);
+  }
+}
+
+.btn-info {
+  background-color: @info-color;
+  border: 1px solid @info-color;
+  box-shadow: 0px 8px 10px -8px fadeout(@info-color, 45%);
+  -webkit-transition: 0.15s ease-in;
+  transition: 0.15s ease-in;
+  &:hover {
+    background: @info-color;
+    box-shadow: 0 8px 10px -5px fadeout(@info-color, 30%);
+    -webkit-box-shadow: 0 8px 10px -5px fadeout(@info-color, 30%);
+  }
+  &:focus, &:active {
+    background-color: darken(@info-color, 5%);
+    border: 1px solid darken(@info-color, 5%);
+    box-shadow: 0 8px 10px -5px fadeout(@info-color, 5%);
+    -webkit-box-shadow: 0 8px 10px -5px fadeout(@info-color, 5%);
+  }
+}
+
+.btn-success {
+  background-color: @success-color;
+  border: 1px solid @success-color;
+  box-shadow: 0px 8px 10px -8px fadeout(@success-color, 45%);
+  -webkit-transition: 0.15s ease-in;
+  transition: 0.15s ease-in;
+  &:hover {
+    background: @success-color;
+    box-shadow: 0 8px 10px -5px fadeout(@success-color, 30%);
+    -webkit-box-shadow: 0 8px 10px -5px fadeout(@success-color, 30%);
+  }
+  &:focus, &:active {
+    background-color: darken(@success-color, 5%);
+    border: 1px solid darken(@success-color, 5%);
+    box-shadow: 0 8px 10px -5px fadeout(@success-color, 5%);
+    -webkit-box-shadow: 0 8px 10px -5px fadeout(@success-color, 5%);
+  }
+}
+
+.btn-warning {
+  background-color: @warning-color;
+  border: 1px solid @warning-color;
+  box-shadow: 0px 8px 10px -8px fadeout(@warning-color, 45%);
+  -webkit-transition: 0.15s ease-in;
+  transition: 0.15s ease-in;
+  &:hover {
+    background: @warning-color;
+    box-shadow: 0 8px 10px -5px fadeout(@warning-color, 30%);
+    -webkit-box-shadow: 0 8px 10px -5px fadeout(@warning-color, 30%);
+  }
+  &:focus, &:active {
+    background-color: darken(@warning-color, 5%);
+    border: 1px solid darken(@warning-color, 5%);
+    box-shadow: 0 8px 10px -5px fadeout(@warning-color, 5%);
+    -webkit-box-shadow: 0 8px 10px -5px fadeout(@warning-color, 5%);
+  }
+}
+
+.return-button, .submit-button {
+  color: @white !important;
+  background-color: @primary-color;
+  border: 1px solid @primary-color;
+  box-shadow: 0px 8px 10px -8px fadeout(@primary-color, 45%);
+  -webkit-transition: 0.15s ease-in;
+  transition: 0.15s ease-in;
+  &:hover {
+    background: @primary-color;
+    -webkit-box-shadow: 0 8px 10px -5px fadeout(@primary-color, 30%);
+    box-shadow: 0 8px 10px -5px fadeout(@primary-color, 30%);
+  }
+  &:focus, &:active {
+    background-color: darken(@primary-color, 5%);
+    border: 1px solid darken(@primary-color, 5%);
+    -webkit-box-shadow: 0 8px 10px -5px fadeout(@primary-color, 5%);
+    box-shadow: 0 8px 10px -5px fadeout(@primary-color, 5%);
+  }
+}
+
+.btn-link {
+  color: #2d3b48;
+}
+
+.btn-link:hover {
+  color: @primary-color;
+}
+
+/* button Outline */
+.btn-outline-primary {
+  color: @primary-color;
+  border-color: @primary-color;
+}
+
+.btn-outline-success {
+  color: @success-color;
+  border-color: @success-color;
+}
+
+.btn-outline-info {
+  color: @primary-color-bis;
+  border-color: @primary-color-bis;
+}
+
+.btn-outline-warning {
+  color: @warning-color;
+  border-color: @warning-color;
+}
+
+.btn-outline-danger {
+  color: @danger-color;
+  border-color: @danger-color;
+}
+
+.btn-outline-dark {
+  color: #2d3b48;
+  background-image: none;
+  background-color: transparent;
+  border-color: #2d3b48;
+}
