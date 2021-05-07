@@ -1,0 +1,17 @@
+{
+  "id": "footer",
+  "class": "footer",
+  "containers": [
+    {
+      "id": "copyright",
+      "class": "copyright",
+      "items": [
+        {
+          "type": "html",
+          "content": "<a href='https://www.forepaas.com' target='_blank'>Powered by <img src='assets/powered.png'>ForePaaS</a>",
+          "label": "Footer"
+        }
+      ]
+    }
+  ]
+}

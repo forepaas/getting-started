@@ -1,0 +1,361 @@
+{
+  "name": "Chartist",
+  "aside": {
+    "left": [],
+    "right": []
+  },
+  "width": 12,
+  "height": 12,
+  "description": "",
+  "margin": [
+    0,
+    0
+  ],
+  "items": [
+    {
+      "type": "panel",
+      "col": 0,
+      "row": 0,
+      "sizeX": 6,
+      "sizeY": 14,
+      "title": "",
+      "items": [
+        {
+          "type": "html",
+          "col": 0,
+          "row": 0,
+          "sizeX": 12,
+          "sizeY": 1,
+          "content": "<h6 class='no-margin'>Donut</h6>"
+        },
+        {
+          "type": "chart",
+          "col": 0,
+          "row": 1,
+          "sizeX": 12,
+          "sizeY": 8,
+          "title": "",
+          "chart": {
+            "dynamic-parameters": [
+              "datepicker"
+            ],
+            "component": "chartist.donut",
+            "request": {
+              "data": {
+                "fields": {
+                  "qte": [
+                    "sum"
+                  ]
+                }
+              },
+              "filter": {
+                "month": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6
+                ]
+              },
+              "scale": {
+                "fields": [
+                  "month"
+                ],
+                "axis": {
+                  "x": [
+                    "month"
+                  ],
+                  "y": []
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "type": "panel",
+      "col": 6,
+      "row": 0,
+      "sizeX": 6,
+      "sizeY": 14,
+      "title": "",
+      "items": [
+        {
+          "type": "html",
+          "col": 0,
+          "row": 0,
+          "sizeX": 12,
+          "sizeY": 1,
+          "content": "<h6 class='no-margin'>Pie</h6>"
+        },
+        {
+          "type": "chart",
+          "col": 0,
+          "row": 1,
+          "sizeX": 12,
+          "sizeY": 8,
+          "chart": {
+            "dynamic-parameters": [
+              "datepicker"
+            ],
+            "component": "chartist.pie",
+            "request": {
+              "data": {
+                "fields": {
+                  "qte": [
+                    "sum"
+                  ]
+                }
+              },
+              "filter": {
+                "month": [
+                  1,
+                  2,
+                  3
+                ]
+              },
+              "scale": {
+                "fields": [
+                  "month"
+                ],
+                "axis": {
+                  "x": [
+                    "month",
+                    "year"
+                  ],
+                  "y": []
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "type": "panel",
+      "col": 0,
+      "row": 14,
+      "sizeX": 6,
+      "sizeY": 14,
+      "title": "",
+      "items": [
+        {
+          "type": "html",
+          "col": 0,
+          "row": 0,
+          "sizeX": 12,
+          "sizeY": 1,
+          "content": "<h6 class='no-margin'>Column</h6>"
+        },
+        {
+          "type": "chart",
+          "col": 0,
+          "row": 1,
+          "sizeX": 12,
+          "sizeY": 8,
+          "chart": {
+            "dynamic-parameters": [
+              "datepicker"
+            ],
+            "component": "chartist.column",
+            "request": {
+              "data": {
+                "fields": {
+                  "qte": [
+                    "sum"
+                  ]
+                }
+              },
+              "evol": {
+                "scale": "month"
+              },
+              "scale": {
+                "fields": [
+                  "month",
+                  "year"
+                ],
+                "axis": {
+                  "x": [
+                    "month",
+                    "year"
+                  ],
+                  "y": []
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "type": "panel",
+      "col": 6,
+      "row": 14,
+      "sizeX": 6,
+      "sizeY": 14,
+      "title": "",
+      "items": [
+        {
+          "type": "html",
+          "col": 0,
+          "row": 0,
+          "sizeX": 12,
+          "sizeY": 1,
+          "content": "<h6 class='no-margin'>Line</h6>"
+        },
+        {
+          "type": "chart",
+          "col": 0,
+          "row": 1,
+          "sizeX": 12,
+          "sizeY": 8,
+          "chart": {
+            "dynamic-parameters": [
+              "datepicker"
+            ],
+            "component": "chartist.line",
+            "request": {
+              "data": {
+                "fields": {
+                  "qte": [
+                    "sum"
+                  ]
+                }
+              },
+              "evol": {
+                "scale": "month"
+              },
+              "scale": {
+                "fields": [
+                  "month",
+                  "year"
+                ],
+                "axis": {
+                  "x": [
+                    "month",
+                    "year"
+                  ],
+                  "y": []
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "type": "panel",
+      "col": 0,
+      "row": 28,
+      "sizeX": 6,
+      "sizeY": 14,
+      "title": "",
+      "items": [
+        {
+          "type": "html",
+          "col": 0,
+          "row": 0,
+          "sizeX": 12,
+          "sizeY": 1,
+          "content": "<h6 class='no-margin'>Scatter</h6>"
+        },
+        {
+          "type": "chart",
+          "col": 0,
+          "row": 1,
+          "sizeX": 12,
+          "sizeY": 8,
+          "chart": {
+            "dynamic-parameters": [
+              "datepicker"
+            ],
+            "component": "chartist.scatter",
+            "request": {
+              "data": {
+                "fields": {
+                  "qte": [
+                    "sum"
+                  ]
+                }
+              },
+              "evol": {
+                "scale": "month"
+              },
+              "scale": {
+                "fields": [
+                  "month",
+                  "year"
+                ],
+                "axis": {
+                  "x": [
+                    "month",
+                    "year"
+                  ],
+                  "y": []
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "type": "panel",
+      "col": 6,
+      "row": 28,
+      "sizeX": 6,
+      "sizeY": 14,
+      "title": "",
+      "items": [
+        {
+          "type": "html",
+          "col": 0,
+          "row": 0,
+          "sizeX": 12,
+          "sizeY": 1,
+          "content": "<h6 class='no-margin'>Area</h6>"
+        },
+        {
+          "type": "chart",
+          "col": 0,
+          "row": 1,
+          "sizeX": 12,
+          "sizeY": 8,
+          "chart": {
+            "dynamic-parameters": [
+              "datepicker"
+            ],
+            "component": "chartist.area",
+            "request": {
+              "data": {
+                "fields": {
+                  "qte": [
+                    "sum"
+                  ]
+                }
+              },
+              "evol": {
+                "scale": "month"
+              },
+              "scale": {
+                "fields": [
+                  "month",
+                  "year"
+                ],
+                "axis": {
+                  "x": [
+                    "month",
+                    "year"
+                  ],
+                  "y": []
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

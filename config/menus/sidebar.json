@@ -3,13 +3,116 @@
   "class": "sidebar",
   "containers": [
     {
-      "id": "footer",
-      "class": "footer",
+      "id": "top",
+      "class": "logo-container",
       "items": [
         {
+          "type": "image",
+          "src": "assets/logo.png",
+          "label": "Logo",
+          "customclass": "when-not-collapsed"
+        },
+        {
+          "type": "image",
+          "src": "assets/logo-collapse.png",
+          "label": "Logo",
+          "customclass": "when-collapsed"
+        }
+      ]
+    },
+    {
+      "id": "user",
+      "class": "user",
+      "items": [
+        {
+          "type": "username",
+          "customclass": "when-not-collapsed"
+        },
+        {
           "type": "html",
-          "content": "<a href='https://www.forepaas.com' target='_blank'>Powered by <img src='assets/img/powered.png'></a>",
-          "label": "Footer"
+          "content": "<i class='fa fa-user-circle'></i>",
+          "customclass": "when-collapsed",
+          "tooltip": {
+            "type": "username"
+          }
+        }
+      ]
+    },
+    {
+      "id": "main",
+      "class": "menu-standard",
+      "items": [
+        {
+          "type": "link",
+          "icon": "vl_dashboard",
+          "url": "/dashboard",
+          "text": "Dashboard",
+          "label": "Dashboard",
+          "tooltip": "Dashboard"
+        },
+        {
+          "type": "link",
+          "icon": "vl_dashboard",
+          "url": "/dashboard2",
+          "text": "Dashboard 2",
+          "label": "Dashboard 2",
+          "tooltip": "Dashboard 2"
+        },
+        {
+          "type": "link",
+          "icon": "vl_graph-bar",
+          "url": "/chartist",
+          "text": "Chartist",
+          "label": "Chartist",
+          "tooltip": "Chartist"
+        },
+        {
+          "type": "link",
+          "icon": "vl_graph-pie",
+          "url": "/morris",
+          "text": "Morris",
+          "label": "Morris",
+          "tooltip": "Morris"
+        },
+        {
+          "type": "link",
+          "icon": "vl_graph4",
+          "url": "/chartjs",
+          "text": "ChartJS",
+          "label": "ChartJS",
+          "tooltip": "ChartJS"
+        },
+        {
+          "type": "link",
+          "icon": "vl_globe4",
+          "url": "/echarts",
+          "text": "Echarts",
+          "label": "Echarts",
+          "tooltip": "Echarts"
+        },
+        {
+          "type": "link",
+          "icon": "vl_grid-even",
+          "url": "/table",
+          "text": "Table",
+          "label": "Table",
+          "tooltip": "Table"
+        },
+        {
+          "type": "link",
+          "icon": "vl_tablet",
+          "url": "/typo",
+          "text": "Typo",
+          "label": "Typo",
+          "tooltip": "Typo"
+        },
+        {
+          "type": "link",
+          "icon": "vl_star",
+          "url": "/reportings",
+          "text": "Reportings",
+          "label": "Reportings",
+          "tooltip": "Reportings"
         }
       ]
     }
