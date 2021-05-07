@@ -3,78 +3,29 @@
   "class": "header",
   "containers": [
     {
-      "id": "parameters",
+      "id": "logo",
       "items": [
         {
-          "type": "menu-collapse",
-          "label": "Menu Collapse",
-          "tooltip": "Un/Collapse menu"
-        },
-        {
-          "type": "dynamic-parameter",
-          "label": "Datepicker",
-          "dynamic-parameter": {
-            "type": "filter",
-            "disable_reference_date": true,
-            "reference": "range_date",
-            "id": "datepicker",
-            "component": "datepicker",
-            "startAt": "subtract(1,'years')",
-            "endAt": "subtract(6,'days')",
-            "ranges": [
-              {
-                "label": "Last Week",
-                "start": "subtract(1,'week').startOf('week')",
-                "end": "subtract(1,'week').endOf('week')",
-                "scale": "day"
-              },
-              {
-                "label": "Last Month",
-                "start": "subtract(1,'month').startOf('month')",
-                "end": "subtract(1,'month').endOf('month')",
-                "scale": "day"
-              },
-              {
-                "label": "Current Year",
-                "start": "startOf('year')",
-                "end": "endOf('day')",
-                "scale": "day"
-              },
-              {
-                "label": "12 M rolling",
-                "start": "subtract(1,'year').add(1,'month').startOf('month')",
-                "end": "endOf('month')",
-                "scale": "day"
-              },
-              {
-                "label": "Last year",
-                "start": "subtract(1,'year').startOf('year')",
-                "end": "subtract(1,'year').endOf('year')",
-                "scale": "day"
-              }
-            ]
-          },
-          "id": "5a1feb2aab90cb0540000027"
+          "type": "image",
+          "src": "assets/img/cta-logo.png",
+          "label": "chicago-logo"
         }
-      ]
+      ],
+      "name": "logo"
     },
     {
-      "id": "user-container",
+      "id": "tabs",
+      "items": [],
+      "name": "tabs"
+    },
+    {
+      "id": "user",
       "items": [
         {
-          "type": "select-lang",
-          "showLabel": true,
-          "label": "Language selector",
-          "text": true
-        },
-        {
-          "type": "html",
-          "content": "<i class='mdi mdi-power'></i>",
-          "customclass": "logout",
-          "onClick": "Forepaas.modules['client-authority-manager'].FpAuthentication.logout()",
-          "label": "Logout"
+          "type": "username"
         }
-      ]
+      ],
+      "name": "user"
     }
   ]
 }
