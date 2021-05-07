@@ -1,7 +1,6 @@
 import FpSdk from 'forepaas/sdk'
 
 import DashboardTitle from './DashboardTitle'
-import Hello from './Hello'
 import Username from './Username'
 import Toaster from './Toaster'
 import WorkInProgress from './WorkInProgress'
@@ -12,7 +11,6 @@ import MenuCollapse from './MenuCollapse'
 export default {
   components: {
     DashboardTitle,
-    Hello,
     Username,
     Toaster,
     WorkInProgress,

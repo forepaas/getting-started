@@ -118,5 +118,5 @@
   "fp.clientAuthorityManager.mfa.yubikey.waiting": "En attente...",
   "fp.clientAuthorityManager.mfa.yubikey.getting": "Envoie des informations",
   "fp.clientAuthorityManager.mfa.yubikey.validation": "Validation en cours",
-  "account_not_found":"Ce compte n'a pas été trouvé",
+  "account_not_found":"Ce compte n'a pas été trouvé"
 }
