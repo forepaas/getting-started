@@ -8,21 +8,14 @@
         {
           "type": "image",
           "src": "assets/img/cta-logo.png",
-          "label": "label"
+          "label": "chicago-logo"
         }
       ],
       "name": "logo"
     },
     {
       "id": "tabs",
-      "items": [
-        {
-          "type": "link",
-          "style": {},
-          "text": "Rides",
-          "url": "/rides-analytics"
-        }
-      ],
+      "items": [],
       "name": "tabs"
     },
     {
