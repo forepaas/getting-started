@@ -8,7 +8,7 @@
         {
           "type": "image",
           "src": "assets/img/cta-logo.png",
-          "label": "label"
+          "label": "chicago-logo"
         }
       ],
       "name": "logo"
