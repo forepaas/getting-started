@@ -7,7 +7,7 @@
       "items": [
         {
           "type": "image",
-          "src": "assets/img/cta-logo.png",
+          "src": "assets/img/logo.png",
           "label": "chicago-logo"
         }
       ],
