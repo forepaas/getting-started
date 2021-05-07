@@ -120,5 +120,8 @@
   "status-warning": "Errors",
   "status-success": "Valid",
   "error_id": "Error",
-  "date": "Date"
+  "date": "Date",
+  "Reached_customers": "Reached Customers",
+  "EstCustomers": "Total Customers (est.)",
+  "ReachedCustomers": "Reached Customers"
 }
