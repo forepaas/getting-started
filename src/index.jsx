@@ -9,9 +9,8 @@ import AppTemplate from 'forepaas/sdk/templates/default.jsx'
 import 'react-toastify/dist/ReactToastify.min.css'
 import 'font-awesome/less/font-awesome.less'
 import 'src/styles/styles.less'
+import 'src/styles/dashlabicons.less'
 import 'src/helpers'
-
-// TODO rajouter fr.json
 
 FpSdk.start()
   .then(() => {

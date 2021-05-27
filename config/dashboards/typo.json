@@ -1,0 +1,53 @@
+{
+  "name": "Typo",
+  "aside": {
+    "left": [],
+    "right": []
+  },
+  "width": 12,
+  "height": 12,
+  "description": "",
+  "margin": [
+    0,
+    0
+  ],
+  "items": [
+    {
+      "type": "panel",
+      "col": 0,
+      "row": 0,
+      "sizeX": 8,
+      "sizeY": 20,
+      "title": "",
+      "items": [
+        {
+          "type": "html",
+          "col": 0,
+          "row": 0,
+          "sizeX": 12,
+          "sizeY": 12,
+          "content": [
+            "<h1>Titre 1</h1>",
+            "<h2>Titre 2</h2>",
+            "<h3>Titre 3</h3>",
+            "<h4>Titre 4</h4>",
+            "<h5>Titre 5</h5>",
+            "<h6>Titre 6</h6>",
+            "<p>Paragraphe</p>",
+            "<br>",
+            "<button class='btn btn-primary'>Button Primary</button>",
+            "<br>",
+            "<br>",
+            "<button class='btn btn-danger'>Button Danger</button>",
+            "<br>",
+            "<br>",
+            "<button class='btn btn-success'>Button Success</button>",
+            "<br>",
+            "<br>",
+            "<button class='btn btn-warning'>Button Warning</button>"
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -3,13 +3,99 @@
   "class": "sidebar",
   "containers": [
     {
-      "id": "footer",
-      "class": "footer",
+      "id": "main",
+      "class": "menu-standard",
       "items": [
         {
-          "type": "html",
-          "content": "<a href='https://www.forepaas.com' target='_blank'>Powered by <img src='assets/img/powered.png'></a>",
-          "label": "Footer"
+          "type": "link",
+          "icon": "vl_dashboard",
+          "url": "/dashboard",
+          "text": "Dashboard",
+          "label": "Dashboard",
+          "isNav": "true",
+          "tooltip": "Dashboard"
+        },
+        {
+          "type": "link",
+          "icon": "vl_dashboard",
+          "url": "/dashboard2",
+          "text": "Dashboard 2",
+          "label": "Dashboard 2",
+          "isNav": "true",
+          "tooltip": "Dashboard 2"
+        },
+        {
+          "type": "link",
+          "icon": "vl_dashboard",
+          "url": "/dashboard3",
+          "text": "Dashboard 3",
+          "label": "Dashboard 3",
+          "isNav": "true",
+          "tooltip": "Dashboard 3"
+        },
+        {
+          "type": "link",
+          "icon": "vl_graph-bar",
+          "url": "/chartist",
+          "text": "Chartist",
+          "label": "Chartist",
+          "isNav": "true",
+          "tooltip": "Chartist"
+        },
+        {
+          "type": "link",
+          "icon": "vl_graph-pie",
+          "url": "/morris",
+          "text": "Morris",
+          "label": "Morris",
+          "isNav": "true",
+          "tooltip": "Morris"
+        },
+        {
+          "type": "link",
+          "icon": "vl_graph4",
+          "url": "/chartjs",
+          "text": "ChartJS",
+          "label": "ChartJS",
+          "isNav": "true",
+          "tooltip": "ChartJS"
+        },
+        {
+          "type": "link",
+          "icon": "vl_globe4",
+          "url": "/echarts",
+          "text": "<p>Echarts</p>",
+          "label": "Echarts",
+          "isNav": "true",
+          "tooltip": "Echarts"
+        },
+        {
+          "type": "link",
+          "icon": "vl_grid-even",
+          "url": "/table",
+          "text": "Table",
+          "label": "Table",
+          "isNav": "true",
+          "tooltip": "Table"
+        },
+        {
+          "type": "link",
+          "icon": "vl_tablet",
+          "url": "/typo",
+          "text": "Typo",
+          "label": "Typo",
+          "isNav": "true",
+          "tooltip": "Typo"
+        }
+      ]
+    },
+    {
+      "id": "bottom",
+      "class": "bottom",
+      "items": [
+        {
+          "type": "menu-collapse",
+          "label": "Menu Collapse"
         }
       ]
     }

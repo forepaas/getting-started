@@ -7,15 +7,27 @@
   "lang": "en",
   "timezone": "UTC",
   "version": 3,
+  "GMAP_ID": "AIzaSyAEdkjDdpJZWPXzfluFE3xMspJq435atDA",
   "storage": {
     "type": "sessionStorage"
   },
-  "root": "/",
+  "root": "dashboard",
   "menu": [
     "file://config/menus/header.json",
-    "file://config/menus/sidebar.json"
+    "file://config/menus/sidebar.json",
+    "file://config/menus/footer.json"
   ],
-  "dashboarding": {},
+  "dashboarding": {
+    "/typo": "file://config/dashboards/typo.json",
+    "/dashboard": "file://config/dashboards/dashboard.json",
+    "/dashboard2": "file://config/dashboards/dashboard2.json",
+    "/dashboard3": "file://config/dashboards/dashboard3.json",
+    "/table": "file://config/dashboards/table.json",
+    "/chartist": "file://config/dashboards/chartist.json",
+    "/echarts": "file://config/dashboards/echarts.json",
+    "/morris": "file://config/dashboards/morris.json",
+    "/chartjs": "file://config/dashboards/chartjs.json"
+  },
   "style": "file://config/style.json",
   "i18n": {
     "en": "file://config/i18n/en.json",
