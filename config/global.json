@@ -5,6 +5,7 @@
   "debug": "{{ENV.DEBUG}}",
   "loader": "spinner",
   "lang": "en",
+  "timezone": "UTC",
   "version": 3,
   "storage": {
     "type": "sessionStorage"
