@@ -30,8 +30,7 @@
       "language": "react"
     },
     "client-authority-manager": {
-      "version": "1.0.1",
-      "language": "react"
+      "version": "1.2.0"
     },
     "dashboarding": {
       "version": "1.0.0",
