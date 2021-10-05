@@ -79,10 +79,6 @@
     "echarts": {
       "version": "1.0.0"
     },
-    "webpack": {
-      "version": "1.3.0",
-      "root": true
-    },
     "chartist": {
       "version": "1.0.0"
     },
