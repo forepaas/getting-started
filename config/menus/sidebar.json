@@ -70,13 +70,6 @@
           "url": "/typo",
           "text": "Typo",
           "label": "Typo"
-        },
-        {
-          "type": "link",
-          "icon": "mdi mdi-format-text",
-          "url": "/reportings",
-          "text": "Reportings",
-          "label": "Reportings"
         }
       ]
     },

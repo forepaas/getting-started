@@ -115,7 +115,6 @@ body {
   .user-container {
     float: right;
     li.menu-list {
-      vertical-align: top;
       display: inline-block;
     }
     .logout {
@@ -133,6 +132,10 @@ body {
     }
     .select-lang {
       width: 180px;
+      .elem {
+        display: flex;
+        align-items: center;
+      }
       .flag {
         transform:scale(0.5);
         &.fr {
@@ -202,7 +205,6 @@ body {
     float: left;
     li.menu-list {
       display: inline-block;
-      vertical-align: top;
       position: relative;
     }
     .selectbox {
