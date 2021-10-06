@@ -4,7 +4,7 @@ import DashboardTitle from './DashboardTitle'
 import Username from './Username'
 import Toaster from './Toaster'
 import WorkInProgress from './WorkInProgress'
-import ChartTable from './ChartTable'
+import HeaderCell from './table'
 import ChartDashBlock from './ChartDashBlock'
 import MenuCollapse from './MenuCollapse'
 
@@ -14,7 +14,6 @@ export default {
     Username,
     Toaster,
     WorkInProgress,
-    ChartTable,
     ChartDashBlock,
     MenuCollapse
   },
@@ -25,5 +24,7 @@ export default {
     for (let component in this.components) {
       FpSdk.modules[this.camelCaseToDash(component)] = this.components[component]
     }
+
+    FpSdk.modules['chart-table'].HeaderCell = HeaderCell
   }
 }

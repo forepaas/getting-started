@@ -105,14 +105,6 @@
           "text": "Typo",
           "label": "Typo",
           "tooltip": "Typo"
-        },
-        {
-          "type": "link",
-          "icon": "vl_star",
-          "url": "/reportings",
-          "text": "Reportings",
-          "label": "Reportings",
-          "tooltip": "Reportings"
         }
       ]
     }

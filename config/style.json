@@ -48,5 +48,16 @@
       "fontSize": 12
     }
   },
+  "chartjs": {
+    "colors": [
+      "#5eb5ef",
+      "#ff829d",
+      "#ffd778",
+      "#acf5fe",
+      "#cae59b",
+      "#f79490",
+      "#ecedf1"
+    ]
+  },
   "loader": "material"
 }
