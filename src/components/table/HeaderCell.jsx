@@ -8,7 +8,7 @@ import PropTypes from 'prop-types'
  * Use fixed data table 2 cell component @see https://github.com/schrodinger/fixed-data-table-2
  * for more information
  * @example
- *  <ChartTable
+ *  <HeaderCell
  *    column={column}
  *    reverse={this.state.reverse}
  *    sortBy={this.state.sortBy}
@@ -19,9 +19,9 @@ import PropTypes from 'prop-types'
  *    <div className='column-head'>
  *      <span>Example Header</span>
  *    </div>
- *  </ChartTable>
+ *  </HeaderCell>
  */
-class ChartTable extends React.Component {
+class HeaderCell extends React.Component {
   constructor (props) {
     super(props)
     this._onSortChange = this._onSortChange.bind(this)
@@ -37,6 +37,7 @@ class ChartTable extends React.Component {
    * @return {ReactElement} markup
    */
   render () {
+    console.log('herererere')
     let className = 'fp-chart-table-hcell fp-chart-table-cell'
     if (this.props.className) {
       className += ` ${this.props.className}`
@@ -55,13 +56,13 @@ class ChartTable extends React.Component {
     return (
       <Cell className={className}>
         {!this.props.disabledSort &&
-          <a onClick={this._onSortChange}>
+          <div onClick={this._onSortChange}>
             {this.props.children}
             <div className='pull-right'>
               <span className={upClass}>↑</span>
               <span className={downClass}>↓</span>
             </div>
-          </a>
+          </div>
         }
         {
           this.props.disabledSort &&
@@ -72,7 +73,7 @@ class ChartTable extends React.Component {
   }
 }
 
-ChartTable.propTypes = {
+HeaderCell.propTypes = {
   disabledSort: PropTypes.bool,
   className: PropTypes.string,
   onSort: PropTypes.func,
@@ -87,4 +88,4 @@ ChartTable.propTypes = {
   reverse: PropTypes.bool
 }
 
-export default ChartTable
+export default HeaderCell
