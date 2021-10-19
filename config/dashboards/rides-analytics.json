@@ -148,9 +148,6 @@
               "order": {}
             },
             "options": {
-              "xAxis": {
-                "type": "category"
-              },
               "yAxis": {
                 "domain": [0, 6000]
               }
