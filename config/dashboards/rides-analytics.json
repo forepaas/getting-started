@@ -35,11 +35,6 @@
               "filter": {},
               "order": {}
             },
-            "options": {
-              "xAxis": {
-                "type": "category"
-              }
-            },
             "dynamic-parameters": [
               "dynamic-date",
               "dynamic-holidays",
