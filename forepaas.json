@@ -14,109 +14,85 @@
   },
   "modules": {
     "recharts": {
-      "version": "1.1.0",
-      "language": "react"
+      "version": "1.1.0"
     },
     "animation": {
-      "version": "1.0.0",
-      "language": "react"
+      "version": "1.0.0"
     },
     "api": {
-      "version": "1.0.0",
-      "language": "react"
+      "version": "1.0.0"
     },
     "chart": {
-      "version": "2.0.0",
-      "language": "react"
+      "version": "2.0.0"
     },
     "client-authority-manager": {
       "version": "1.2.0"
     },
     "dashboarding": {
-      "version": "1.0.0",
-      "language": "react"
+      "version": "1.0.0"
     },
     "dynamic-parameter": {
-      "version": "1.1.0",
-      "language": "react"
+      "version": "1.1.0"
     },
     "dynamic-parameter-datepicker": {
       "version": "2.1.0"
     },
     "dynamic-parameter-selectbox": {
-      "version": "2.0.0",
-      "language": "react"
+      "version": "2.1.0"
     },
     "formatter": {
-      "version": "1.2.0",
-      "language": "react"
+      "version": "1.2.0"
     },
     "core-ui": {
       "version": "3.2.0"
     },
     "menu": {
-      "version": "3.0.0",
-      "language": "react"
+      "version": "3.0.0"
     },
     "query-builder": {
-      "version": "2.0.0",
-      "language": "react"
+      "version": "2.0.0"
     },
     "sdk": {
-      "version": "1.2.1",
-      "language": "react"
+      "version": "1.2.1"
     },
     "store": {
-      "version": "1.0.1",
-      "language": "react"
+      "version": "1.0.1"
     },
     "toaster": {
-      "version": "1.0.0",
-      "language": "react"
+      "version": "1.0.0"
     },
     "translate": {
-      "version": "1.0.0",
-      "language": "react"
+      "version": "1.0.0"
     },
     "xhr": {
-      "version": "1.0.0",
-      "language": "react"
+      "version": "1.0.0"
     },
     "chart-table": {
-      "version": "2.1.0",
-      "language": "react"
+      "version": "2.1.0"
     },
     "dynamic-parameter-radio": {
-      "version": "1.0.0",
-      "language": "react"
+      "version": "1.0.0"
     },
     "dynamic-parameter-checkbox": {
-      "version": "1.0.0",
-      "language": "react"
+      "version": "1.0.0"
     },
     "dynamic-parameter-toggle": {
-      "version": "1.0.0",
-      "language": "react"
+      "version": "1.0.0"
     },
     "echarts": {
-      "version": "1.2.2",
-      "language": "react"
+      "version": "1.2.2"
     },
     "chartist": {
-      "version": "1.0.0",
-      "language": "react"
+      "version": "1.0.0"
     },
     "chartjs": {
-      "version": "1.2.0",
-      "language": "react"
+      "version": "1.2.0"
     },
     "morris": {
-      "version": "1.0.0",
-      "language": "react"
+      "version": "1.0.0"
     },
     "jvectormap": {
-      "version": "2.0.0",
-      "language": "react"
+      "version": "2.0.0"
     }
   }
 }
