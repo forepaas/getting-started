@@ -2,6 +2,7 @@
   "type": "app",
   "language": "js",
   "framework": "react",
+  "node": 14,
   "management": {
     "dashboards": {
       "editor": "architect"
