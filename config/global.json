@@ -10,7 +10,7 @@
   "storage": {
     "type": "sessionStorage"
   },
-  "root": "/",
+  "root": "rides-analytics",
   "menu": [
     "file://config/menus/header.json",
     "file://config/menus/sidebar.json"
