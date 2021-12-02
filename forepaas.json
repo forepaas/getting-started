@@ -3,6 +3,7 @@
   "language": "js",
   "framework": "react",
   "node": 14,
+  "publicPath": "public",
   "management": {
     "dashboards": {
       "editor": "architect"
