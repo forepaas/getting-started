@@ -2,6 +2,8 @@
   "type": "app",
   "language": "js",
   "framework": "react",
+  "node": 14,
+  "publicPath": "public",
   "management": {
     "dashboards": {
       "editor": "architect"
@@ -41,7 +43,7 @@
       "version": "2.1.0"
     },
     "dynamic-parameter-selectbox": {
-      "version": "2.0.0"
+      "version": "2.1.0"
     },
     "formatter": {
       "version": "1.2.0"
