@@ -26,6 +26,8 @@
   "signin": "Sign in",
   "You have been disconnected": "You have been disconnected",
   "You can now close this window, or reconnect": "You can now close this window, or reconnect",
+  "You successfully signed out": "You successfully signed out",
+  "It is recommended to now close all browser windows before leaving. You can also sign back in by clicking the button below.": "It is recommended to now close all browser windows before leaving. You can also sign back in by clicking the button below.",
   "Reconnect": "Reconnect",
   "Personnalisé": "Custom",
   "Password Lost": "Forgot your password",
