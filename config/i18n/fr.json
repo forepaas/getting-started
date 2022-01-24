@@ -17,6 +17,8 @@
   "signin": "Se connecter",
   "You have been disconnected": "Vous avez été déconnecté",
   "You can now close this window, or reconnect": "Vous pouvez maintenant fermer la fenetre, ou vous reconnecter",
+  "You successfully signed out": "Vous vous êtes déconnecté avec succès",
+  "It is recommended to now close all browser windows before leaving. You can also sign back in by clicking the button below.": "Il est recommandé de fermer maintenant toutes les fenêtres du navigateur avant de quitter. Vous pouvez également vous reconnecter en cliquant sur le bouton ci-dessous.",
   "Reconnect": "Reconnexion",
   "Personnalisé": "Personnalisé",
   "Password Lost": "Mot de passe oublié",
