@@ -217,15 +217,15 @@ body {
   bottom: 0;
   top: @header-height;
   right: 0;
-  overflow: auto;
-  padding: 20px;
+  background: @root-background;
 
   .fp-dashboard {
     width: 100%;
     height: 100%;
-    background: @root-background;
 
     .grid-layout {
+      overflow: auto;
+      padding: 20px;
       .grid-layout-inner {
         overflow: visible !important;
       }
