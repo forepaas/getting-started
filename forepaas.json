@@ -2,7 +2,7 @@
   "type": "app",
   "language": "js",
   "framework": "react",
-  "node": 14,
+  "node": 16,
   "publicPath": "public",
   "management": {
     "dashboards": {
