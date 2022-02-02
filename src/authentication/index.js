@@ -9,7 +9,7 @@ export default {
   },
   init() {
     for (let component in this.components) {
-      FpSdk.modules['client-authority-manager'][component] = this.components[component]
+      FpSdk.modules['client-authority-manager'][`Fp${component}`] = this.components[component]
     }
   }
 }
