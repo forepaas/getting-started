@@ -87,9 +87,16 @@
 }
 
 .selectbox__control.css-1goq2uo-control {
-  width      : calc(@sidebar-width - 6px);
+  width      : calc(@dynamic-parameter-width - 6px);
   margin     : 5px 5px 0px 5px;
   font-weight: bold;
+}
+.sidebar {
+  .selectbox__control.css-1goq2uo-control {
+    width      : calc(@sidebar-width - 10px);
+    margin     : 5px 5px 0px 5px;
+    font-weight: bold;
+  }
 }
 
 .selectbox__control.css-1goq2uo-control:hover {
