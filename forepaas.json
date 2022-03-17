@@ -43,10 +43,10 @@
       "version": "2.2.0"
     },
     "dynamic-parameter-selectbox": {
-      "version": "2.1.0"
+      "version": "2.2.0"
     },
     "formatter": {
-      "version": "1.2.0"
+      "version": "1.3.0"
     },
     "core-ui": {
       "version": "3.2.0"
@@ -55,13 +55,13 @@
       "version": "3.0.0"
     },
     "query-builder": {
-      "version": "2.0.0"
+      "version": "2.0.2"
     },
     "sdk": {
       "version": "1.2.3"
     },
     "store": {
-      "version": "1.0.1"
+      "version": "1.1.0"
     },
     "toaster": {
       "version": "1.0.0"
