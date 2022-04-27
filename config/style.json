@@ -12,7 +12,6 @@
     },
     "control": {
       "fontSize": 12,
-      "width": 250,
       "borderRadius": 5,
       "maxHeight": 36,
       "height": 36,
