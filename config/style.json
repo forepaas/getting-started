@@ -12,7 +12,8 @@
       "height": 34
     },
     "control": {
-      "cursor": "pointer",
+      "fontSize": 12,
+      "borderRadius": 5,
       "maxHeight": 36,
       "height": 36,
       "minHeight": 0,
