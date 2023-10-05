@@ -3,20 +3,24 @@
   "class": "header",
   "containers": [
     {
+      "id": "tabs",
+      "items": [],
+      "name": "tabs"
+    },
+    {
       "id": "logo",
       "items": [
         {
           "type": "image",
-          "src": "assets/img/cta-logo.png",
-          "label": "chicago-logo"
+          "src": "assets/img/logofull.png",
+          "label": "forepaas-logo",
+          "style": {
+            "width": "96px",
+            "height": "26px"
+          }
         }
       ],
       "name": "logo"
-    },
-    {
-      "id": "tabs",
-      "items": [],
-      "name": "tabs"
     },
     {
       "id": "user",

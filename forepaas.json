@@ -71,6 +71,9 @@
     },
     "chart-table": {
       "version": "2.1.0"
+    },
+    "aab-assistant": {
+      "version": "1.0.0"
     }
   }
 }

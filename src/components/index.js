@@ -3,6 +3,7 @@ import FpSdk from 'forepaas/sdk'
 import DashboardTitle from './DashboardTitle'
 import Hello from './Hello'
 import Username from './Username'
+import SupportChatbot from './SupportChatbot'
 import Toaster from './Toaster'
 import WorkInProgress from './WorkInProgress'
 
@@ -11,6 +12,7 @@ export default {
     DashboardTitle,
     Hello,
     Username,
+    SupportChatbot,
     Toaster,
     WorkInProgress
   },

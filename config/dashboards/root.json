@@ -1,0 +1,35 @@
+{
+  "name": "Root",
+  "width": 12,
+  "height": 12,
+  "description": "",
+  "margin": [
+    0,
+    0
+  ],
+  "items": [
+    {
+      "type": "support-chatbot",
+      "col": 0,
+      "row": 0,
+      "sizeX": 12,
+      "sizeY": 2
+    },
+    {
+      "type": "panel",
+      "col": 0,
+      "row": 2,
+      "sizeX": 12,
+      "sizeY": 24,
+      "items": [
+        {
+          "type": "aab-assistant",
+          "col": 0,
+          "row": 0,
+          "sizeX": 12,
+          "sizeY": 23
+        }
+      ]
+    }
+  ]
+}

@@ -3,6 +3,7 @@
   "api": "{{ENV.API_URL}}",
   "application_name": "{{ENV.APP_NAME || 'ForePaaS'}}",
   "debug": "{{ENV.DEBUG}}",
+  "aab_assistant_url": "{{ENV.AAB_ASSISTANT_URL  || 'https://mcjeangab-2.forepaas.io/test-chris/v1/chats/13aa61fe-31c8-4a44-8508-a8f0402eb05f'}}",
   "loader": "spinner",
   "lang": "en",
   "timezone": "UTC",
@@ -10,13 +11,12 @@
   "storage": {
     "type": "sessionStorage"
   },
-  "root": "rides-analytics",
+  "root": "/",
   "menu": [
-    "file://config/menus/header.json",
-    "file://config/menus/sidebar.json"
+    "file://config/menus/header.json"
   ],
   "dashboarding": {
-    "/rides-analytics": "file://config/dashboards/rides-analytics.json"
+    "/": "file://config/dashboards/root.json"
   },
   "style": "file://config/style.json",
   "i18n": {

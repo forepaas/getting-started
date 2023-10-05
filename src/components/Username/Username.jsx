@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 
 import FpClientAuthorityManager from 'forepaas/client-authority-manager'
+import FpTranslate from 'forepaas/translate'
 
 @connect((state) => ({
   local: state.local
@@ -33,9 +34,9 @@ class Username extends Component {
     return (
       <div className='username'>
         <div className='username-content'>
-          <div className='username-info'>
-            <p className='username-name'>{this.username}</p>
-            <p className='username-logout' onClick={this.logout}>Logout</p>
+          <div className='username-logout'>
+            <i className='fpui fpui-power'></i>
+            <span onClick={this.logout}>{FpTranslate('Logout')}</span>
           </div>
         </div>
       </div>
