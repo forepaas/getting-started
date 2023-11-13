@@ -13,11 +13,7 @@
         {
           "type": "image",
           "src": "assets/img/logofull.png",
-          "label": "forepaas-logo",
-          "style": {
-            "width": "96px",
-            "height": "26px"
-          }
+          "label": "logo"
         }
       ],
       "name": "logo"

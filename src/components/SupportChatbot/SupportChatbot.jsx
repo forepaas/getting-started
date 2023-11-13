@@ -14,10 +14,10 @@ class SupportChatbot extends Component {
     return (
       <div className='support-chatbot'>
         <h1>{FpTranslate('Support Chatbot')}</h1>
-        <a className="powered-by-forepaas" href="https://www.forepaas.com" target='blank'>
+        <a className="powered-by" href="https://www.ovhcloud.com" target='blank'>
           <button>
-            <img src="assets/logo.png" alt="forepaas"  width="20px" height="20px"/>
-            <span>{FpTranslate('Powered by ForePaaS')}</span>
+            <img src="assets/logo.png" alt="powered by"  width="20px" height="20px"/>
+            <span>{FpTranslate('powered_by')}</span>
           </button>
         </a>
       </div>
