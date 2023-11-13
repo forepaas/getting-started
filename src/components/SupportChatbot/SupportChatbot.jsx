@@ -16,7 +16,7 @@ class SupportChatbot extends Component {
         <h1>{FpTranslate('Support Chatbot')}</h1>
         <a className="powered-by" href="https://www.ovhcloud.com" target='blank'>
           <button>
-            <img src="assets/logo.png" alt="powered by"  width="20px" height="20px"/>
+            <img src="assets/logo-ovh.png" alt="powered by"  width="20px" height="20px"/>
             <span>{FpTranslate('powered_by')}</span>
           </button>
         </a>
