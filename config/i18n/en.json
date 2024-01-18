@@ -124,7 +124,7 @@
   "EstCustomers": "Total Customers (est.)",
   "ReachedCustomers": "Reached Customers",
   "authentication.mfa.authenticator": "Use authenticator app",
-  "authentication.mfa.authenticator.code_label": "Enter the code from the two-factor app on your mobile device. If you’ve lost your device, please contact your admin to regenerate an authentication code",
+  "authentication.mfa.authenticator.code_label": "Enter the code from the two-factor app on your mobile device. If this is your first time connecting to this app, or if you've lost your authenticator device, please contact your administrator to regenerate an authenticator key code.",
   "authentication.mfa.authenticator.send": "Activate",
   "authentication.mfa.code": "XXXXXX",
   "authentication.mfa.description": "Two-factor authentication is required to reach this page.",
