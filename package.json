@@ -69,7 +69,6 @@
     "redux-logger": "^3.0.6",
     "redux-thunk": "^2.2.0",
     "sortablejs": "^1.7.0",
-    "tui-chart": "^3.0.0",
     "uglifyjs-webpack-plugin": "^0.4.6"
   },
   "scripts": {
