@@ -58,8 +58,7 @@
     "node-waves": "^0.7.6",
     "raphael": "^2.2.7",
     "react-google-charts": "^1.5.5",
-    "react-toggle": "^4.0.2",
-    "tui-chart": "^3.0.0"
+    "react-toggle": "^4.0.2"
   },
   "scripts": {
     "start": "craco start",
