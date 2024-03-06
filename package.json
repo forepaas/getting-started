@@ -58,8 +58,7 @@
     "redux": "^3.7.2",
     "redux-logger": "^3.0.6",
     "redux-thunk": "^2.2.0",
-    "sortablejs": "^1.7.0",
-    "tui-chart": "^3.0.0"
+    "sortablejs": "^1.7.0"
   },
   "scripts": {
     "start": "craco start",
