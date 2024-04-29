@@ -1,4 +1,5 @@
 {
+  "dataplant_id": "{{ENV.DATAPLANT_ID}}",
   "authentication": "{{ENV.CAM_URL}}",
   "api": "{{ENV.API_URL}}",
   "application_name": "{{ENV.APP_NAME || 'ForePaaS'}}",
