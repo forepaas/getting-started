@@ -2,6 +2,7 @@
   "type": "app",
   "language": "js",
   "framework": "react",
+  "version": "1.0.1",
   "node": 16,
   "publicPath": "public",
   "management": {
@@ -28,7 +29,7 @@
       "version": "2.0.0"
     },
     "client-authority-manager": {
-      "version": "1.4.0"
+      "version": "1.4.1"
     },
     "dashboarding": {
       "version": "1.0.0"
